@@ -4,7 +4,7 @@
 !.env.example
 
 # Reports and snapshots (they describe your tenant: user names, table names, what you pay)
-reports/
+/reports/
 *.snapshot.json
 snapshot*.json
 # Your own price file and tool inventory hold contract prices: keep them out of a public repo
