@@ -1,0 +1,27 @@
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+
+# Reports and snapshots (they describe your tenant: user names, table names, what you pay)
+/reports/
+*.snapshot.json
+snapshot*.json
+# Your own price file and tool inventory hold contract prices: keep them out of a public repo
+my-*.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store

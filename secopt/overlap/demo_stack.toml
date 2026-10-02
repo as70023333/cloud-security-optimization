@@ -1,0 +1,100 @@
+# Security tool inventory for a fictional company. Copy this file and describe your own stack.
+#
+#   name          what you call the tool
+#   vendor        who you buy it from
+#   annual_cost   what you pay for it on its own each year; leave out (or 0) if it comes with a licence
+#   bundled_with  the licence that includes it, when it has no separate cost
+#   capabilities  what it does, from the vocabulary in: secopt overlap --list-capabilities
+#
+# The gap analysis checks a baseline of capabilities most organizations need. Adjust it here:
+currency = "USD"
+required = ["pam"]        # needed in addition to the baseline
+not_required = []         # baseline capabilities that do not apply to you
+
+# --- included in Microsoft 365 E5 -------------------------------------------------------------
+[[tool]]
+name = "Microsoft Defender for Endpoint"
+vendor = "Microsoft"
+bundled_with = "Microsoft 365 E5"
+capabilities = ["antivirus", "edr", "vulnerability-management"]
+
+[[tool]]
+name = "Microsoft Intune"
+vendor = "Microsoft"
+bundled_with = "Microsoft 365 E5"
+capabilities = ["device-management", "patch-management", "disk-encryption"]
+
+[[tool]]
+name = "Microsoft Entra ID P2"
+vendor = "Microsoft"
+bundled_with = "Microsoft 365 E5"
+capabilities = ["sso", "mfa", "conditional-access", "identity-governance"]
+
+[[tool]]
+name = "Microsoft Defender for Identity"
+vendor = "Microsoft"
+bundled_with = "Microsoft 365 E5"
+capabilities = ["identity-threat-detection"]
+
+[[tool]]
+name = "Microsoft Defender for Office 365"
+vendor = "Microsoft"
+bundled_with = "Microsoft 365 E5"
+capabilities = ["email-security", "phishing-simulation"]
+
+[[tool]]
+name = "Microsoft Defender for Cloud Apps"
+vendor = "Microsoft"
+bundled_with = "Microsoft 365 E5"
+capabilities = ["casb"]
+
+# --- paid separately --------------------------------------------------------------------------
+[[tool]]
+name = "Microsoft Sentinel"
+vendor = "Microsoft"
+annual_cost = 96000
+capabilities = ["siem", "soar", "ueba", "threat-intelligence"]
+
+[[tool]]
+name = "Acme EDR"
+vendor = "Acme"
+annual_cost = 54000
+capabilities = ["antivirus", "edr"]
+notes = "Bought before the E5 upgrade. Renews in March."
+
+[[tool]]
+name = "Acme Email Gateway"
+vendor = "Acme"
+annual_cost = 38000
+capabilities = ["email-security"]
+
+[[tool]]
+name = "Acme SIEM (legacy)"
+vendor = "Acme"
+annual_cost = 72000
+capabilities = ["siem", "case-management"]
+notes = "Kept for the ticketing workflow after the move to Sentinel."
+
+[[tool]]
+name = "Acme Vulnerability Scanner"
+vendor = "Acme"
+annual_cost = 24000
+capabilities = ["vulnerability-management", "asset-inventory"]
+
+[[tool]]
+name = "Acme Firewall"
+vendor = "Acme"
+annual_cost = 45000
+capabilities = ["firewall", "ids-ips", "web-filtering", "ztna"]
+
+[[tool]]
+name = "Acme Awareness Training"
+vendor = "Acme"
+annual_cost = 9000
+capabilities = ["security-awareness", "phishing-simulation"]
+
+[[tool]]
+name = "Acme Password Manager"
+vendor = "Acme"
+annual_cost = 6000
+capabilities = ["password-manager"]
