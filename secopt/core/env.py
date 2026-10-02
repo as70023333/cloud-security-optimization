@@ -31,6 +31,8 @@ def load_dotenv(path: str | os.PathLike[str] = ".env", *, override: bool = False
         quoted = re.match(r"""^(['"])(.*?)\1\s*(?:#.*)?$""", value)
         if quoted:
             value = quoted.group(2)  # KEY="value"   # comment
+        elif value.startswith("#"):
+            value = ""  # KEY=   # only a comment
         else:
             value = re.split(r"\s+#", value, maxsplit=1)[0].strip()
         if override or key not in os.environ:

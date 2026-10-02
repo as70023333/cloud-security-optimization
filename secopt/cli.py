@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 import os
 import re
 import sys
@@ -16,7 +15,7 @@ from typing import Any, Callable
 from secopt import __version__
 from secopt.core.env import env_int, env_str, load_dotenv
 from secopt.core.http import HttpClient, HttpError
-from secopt.core.model import Opportunity, money, total_saving
+from secopt.core.model import Opportunity, is_currency, is_number, money, total_saving
 from secopt.core.output import parse_formats, to_json, write_text
 from secopt.report import licenses_markdown, overlap_markdown, sentinel_markdown, write_reports
 
@@ -153,8 +152,8 @@ def _sentinel(args: argparse.Namespace, formats: list[str], log: Callable[[str],
     from secopt.sentinel.analyze import SentinelConfig, analyze
     from secopt.sentinel.collect import AzureReader, collect
 
-    if args.price_per_gb is not None and not (math.isfinite(args.price_per_gb) and args.price_per_gb > 0):
-        raise UsageError("--price-per-gb must be a number greater than 0")
+    if args.price_per_gb is not None and not is_number(args.price_per_gb, 1e-6, 1e6):
+        raise UsageError("--price-per-gb must be a number greater than 0 (and below 1,000,000)")
     config = SentinelConfig(price_per_gb=args.price_per_gb)
     if args.demo:
         snapshot, source = json.loads(_demo("secopt.sentinel", "demo.json")), "built-in demo workspace (fictional data)"
@@ -209,9 +208,12 @@ def load_prices(path: str) -> tuple[dict[str, float], str]:
     if unknown:
         raise UsageError(f"{path}: unknown key(s) {', '.join(sorted(unknown))}")
     for part, price in prices.items():
-        if isinstance(price, bool) or not isinstance(price, (int, float)) or not math.isfinite(price) or price < 0:
-            raise UsageError(f"{path}: the price for {part} must be a number, 0 or more")
-    return {part: float(price) for part, price in prices.items()}, str(data.get("currency", "USD")).upper()
+        if not is_number(price, 0, 1e6):
+            raise UsageError(f"{path}: the price for {part} must be a number, 0 or more (and below 1,000,000)")
+    currency = data.get("currency", "USD")
+    if not is_currency(currency):
+        raise UsageError(f"{path}: currency must be a three-letter code such as USD")
+    return {part: float(price) for part, price in prices.items()}, currency.upper()
 
 
 def _licenses(args: argparse.Namespace, formats: list[str], log: Callable[[str], None]) -> int:
@@ -290,19 +292,35 @@ def main(argv: list[str] | None = None) -> int:
         formats = parse_formats(args.format, ("md", "csv", "json"))
         log = (lambda _m: None) if args.quiet else (lambda m: print(f"  {m}", file=sys.stderr))
         if args.command == "sentinel":
-            return _sentinel(args, formats, log)
-        if args.command == "licenses":
-            return _licenses(args, formats, log)
-        return _overlap(args, formats)
+            code = _sentinel(args, formats, log)
+        elif args.command == "licenses":
+            code = _licenses(args, formats, log)
+        else:
+            code = _overlap(args, formats)
+        sys.stdout.flush()  # here, so a closed pipe or a full disk is handled below, not at exit
+        return code
     except BrokenPipeError:  # output piped into something that stopped reading, such as head
-        try:
-            os.dup2(os.open(os.devnull, os.O_WRONLY), sys.stdout.fileno())
-        except (OSError, ValueError):
-            pass
+        _discard_stdout()
         return EXIT_OK
     except (UsageError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return EXIT_ERROR
+    except OverflowError:
+        print("error: a number in the input is too large to work with", file=sys.stderr)
+        return EXIT_ERROR
     except OSError as exc:  # cannot create the report folder, write a report, save a snapshot...
         print(f"error: {exc.strerror or exc}" + (f": {exc.filename}" if exc.filename else ""), file=sys.stderr)
+        try:
+            sys.stdout.flush()
+        except OSError:  # it was standard output itself that could not be written
+            _discard_stdout()
         return EXIT_ERROR
+
+
+def _discard_stdout() -> None:
+    """Point standard output at nothing, so text still buffered for a closed or full destination
+    does not raise again when Python flushes it on exit."""
+    try:
+        os.dup2(os.open(os.devnull, os.O_WRONLY), sys.stdout.fileno())
+    except (OSError, ValueError):
+        pass

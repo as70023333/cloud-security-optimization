@@ -2,11 +2,10 @@
 
 from __future__ import annotations
 
-import urllib.parse
 from typing import Any, Callable, Mapping
 
 from secopt.core.auth import GRAPH_SCOPE, TokenCredential
-from secopt.core.http import HttpClient, HttpError
+from secopt.core.http import HttpClient, HttpError, same_origin
 from secopt.core.timeutil import iso, utcnow
 
 GRAPH_BASE = "https://graph.microsoft.com"
@@ -20,7 +19,6 @@ class GraphReader:
         self.http = http
         self.credential = credential
         self.base = base.rstrip("/")
-        self._host = urllib.parse.urlsplit(self.base).netloc.lower()
 
     def get_all(self, path: str, params: Mapping[str, str] | None = None) -> list[dict]:
         scope = GRAPH_SCOPE if self.base == GRAPH_BASE else f"{self.base}/.default"
@@ -28,8 +26,8 @@ class GraphReader:
         query = params
         items: list[dict] = []
         while url:
-            # Never send the token to another host, even if a paging link points there.
-            if urllib.parse.urlsplit(url).netloc.lower() != self._host:
+            # Never send the token to another host, or over plain http, even if a paging link points there.
+            if not same_origin(url, self.base):
                 raise HttpError(0, "refusing to follow a paging link to another host")
             headers = {"Authorization": f"Bearer {self.credential.get_token(scope)}"}
             data = self.http.request("GET", url, params=query, headers=headers, ok=(200,)).json() or {}
@@ -78,10 +76,10 @@ def _users(graph: GraphReader, snapshot: dict[str, Any]) -> list[dict[str, Any]]
             activity = user.get("signInActivity") or {}
             last = activity.get("lastSuccessfulSignInDateTime") or max(
                 (activity.get("lastSignInDateTime") or "", activity.get("lastNonInteractiveSignInDateTime") or ""))
-            out.append({"id": user.get("id", ""), "upn": user.get("userPrincipalName", ""),
+            out.append({"id": user.get("id") or "", "upn": user.get("userPrincipalName") or user.get("id") or "",
                         "enabled": bool(user.get("accountEnabled")), "type": user.get("userType") or "Member",
                         "created": user.get("createdDateTime") or "", "last_sign_in": last or "",
-                        "sku_ids": sorted(licences)})
+                        "sku_ids": sorted(set(licences))})
         return out
     raise last_error  # type: ignore[misc]
 

@@ -17,13 +17,12 @@ The inventory is a TOML file you maintain (see examples/security-stack.toml):
 
 from __future__ import annotations
 
-import math
 import tomllib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from secopt.core.model import Opportunity, money, rank
+from secopt.core.model import Opportunity, is_currency, is_number, money, rank
 from secopt.overlap.capabilities import BASELINE, CAPABILITIES, DOMAINS
 
 AREA = "overlap"
@@ -105,8 +104,8 @@ def parse_inventory(data: dict[str, Any], source: str = "inventory") -> Inventor
             raise InventoryError(f"{where}: listed twice")
         seen.add(name.lower())
         cost = raw.get("annual_cost", 0)
-        if isinstance(cost, bool) or not isinstance(cost, (int, float)) or not math.isfinite(cost) or cost < 0:
-            raise InventoryError(f"{where}: annual_cost must be a non-negative number")
+        if not is_number(cost):
+            raise InventoryError(f"{where}: annual_cost must be a number, 0 or more")
         capabilities = _strings(raw.get("capabilities"), f"{where}: capabilities")
         if not capabilities:
             raise InventoryError(f"{where}: list at least one capability")
@@ -118,7 +117,7 @@ def parse_inventory(data: dict[str, Any], source: str = "inventory") -> Inventor
     _known(required, f"{source}: required")
     _known(not_required, f"{source}: not_required")
     currency = data.get("currency", "USD")
-    if not isinstance(currency, str) or len(currency) != 3 or not currency.isalpha():
+    if not is_currency(currency):
         raise InventoryError(f"{source}: currency must be a three-letter code")
     return Inventory(tools, currency.upper(), frozenset((BASELINE | set(required)) - set(not_required)))
 

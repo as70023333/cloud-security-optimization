@@ -16,7 +16,7 @@ import urllib.parse
 from typing import Any, Callable, Mapping
 
 from secopt.core.auth import ARM_SCOPE, LOG_ANALYTICS_SCOPE, TokenCredential
-from secopt.core.http import HttpClient, HttpError
+from secopt.core.http import HttpClient, HttpError, same_origin
 from secopt.core.timeutil import iso, utcnow
 
 ARM_BASE = "https://management.azure.com"
@@ -33,15 +33,16 @@ Log = Callable[[str], None]
 def usage_query(days: int) -> str:
     """Billable and total volume per table per day. ``Quantity`` is in MB; billing GB = MB / 1000.
 
-    Follows Microsoft's documented billing queries: Usage records are hourly and are filtered and
-    grouped on StartTime/EndTime (the hour the data belongs to), not on TimeGenerated (when the
-    record was written, shortly after the hour ended). Only whole days are included.
+    As in Microsoft's documented billing queries, Usage records are hourly and are filtered and
+    grouped on StartTime (the hour the data belongs to), not on TimeGenerated (when the record was
+    written, shortly after the hour ended). Every hour that started before today's midnight is
+    included, so only whole days are counted.
     """
     if not MIN_DAYS <= days <= MAX_DAYS:
         raise ValueError(f"days must be between {MIN_DAYS} and {MAX_DAYS}")
     return ("Usage\n"
             f"| where TimeGenerated > ago({days + 2}d)\n"
-            f"| where StartTime >= startofday(ago({days}d)) and EndTime < startofday(now())\n"
+            f"| where StartTime >= startofday(ago({days}d)) and StartTime < startofday(now())\n"
             "| summarize BillableMB = sumif(Quantity, IsBillable == true), TotalMB = sum(Quantity) "
             "by DataType, Day = bin(StartTime, 1d)\n"
             "| project Day, DataType, BillableMB, TotalMB\n"
@@ -57,7 +58,6 @@ class AzureReader:
         self.credential = credential
         self.arm_base = arm_base.rstrip("/")
         self.log_analytics_base = log_analytics_base.rstrip("/")
-        self._arm_host = urllib.parse.urlsplit(self.arm_base).netloc.lower()
 
     def _arm_headers(self) -> dict[str, str]:
         scope = ARM_SCOPE if self.arm_base == ARM_BASE else f"{self.arm_base}/.default"
@@ -72,8 +72,8 @@ class AzureReader:
         query: Mapping[str, str] | None = {"api-version": api_version}
         items: list[dict] = []
         while url:
-            # Never send the token to another host, even if a paging link points there.
-            if urllib.parse.urlsplit(url).netloc.lower() != self._arm_host:
+            # Never send the token to another host, or over plain http, even if a paging link points there.
+            if not same_origin(url, self.arm_base):
                 raise HttpError(0, "refusing to follow a paging link to another host")
             data = self.http.request("GET", url, params=query, headers=self._arm_headers(), ok=(200,)).json() or {}
             items.extend(data.get("value") or [])
@@ -130,12 +130,10 @@ def fetch_prices(http: HttpClient, region: str, currency: str = "USD") -> dict[s
     url: str | None = (f"{RETAIL_PRICES_URL}?currencyCode={urllib.parse.quote(repr(currency))}"
                        f"&$filter={urllib.parse.quote(odata)}")
     items: list[dict] = []
-    host = urllib.parse.urlsplit(RETAIL_PRICES_URL).hostname
     while url:
-        # Paging links come back as https://prices.azure.com:443/..., so compare host names, not
-        # host:port. No credentials are sent here, but the tool still only talks to the one host.
-        parts = urllib.parse.urlsplit(url)
-        if parts.scheme != "https" or parts.hostname != host:
+        # Paging links come back as https://prices.azure.com:443/..., which is the same origin.
+        # No credentials are sent here, but the tool still only talks to the one host.
+        if not same_origin(url, RETAIL_PRICES_URL):
             raise HttpError(0, "refusing to follow a paging link to another host")
         data = http.request("GET", url, ok=(200,)).json() or {}
         items.extend(data.get("Items") or [])
@@ -180,9 +178,12 @@ def _rules(reader: AzureReader, workspace_id: str) -> list[dict[str, Any]]:
 def _usage(reader: AzureReader, customer_id: str, days: int) -> list[dict[str, Any]]:
     rows = []
     for row in reader.log_query(customer_id, usage_query(days)):
-        rows.append({"date": str(row.get("Day") or "")[:10], "table": str(row.get("DataType") or ""),
-                     "billable_gb": round(float(row.get("BillableMB") or 0) / 1000.0, 6),
-                     "total_gb": round(float(row.get("TotalMB") or 0) / 1000.0, 6)})
+        date, table = str(row.get("Day") or "")[:10], str(row.get("DataType") or "").strip()
+        if not table or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+            continue  # a record with no table name or day cannot be attributed to anything
+        rows.append({"date": date, "table": table,
+                     "billable_gb": round(max(0.0, float(row.get("BillableMB") or 0)) / 1000.0, 6),
+                     "total_gb": round(max(0.0, float(row.get("TotalMB") or 0)) / 1000.0, 6)})
     return rows
 
 

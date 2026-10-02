@@ -2,13 +2,12 @@
 
 from __future__ import annotations
 
-import math
 import re
 from collections import defaultdict
 from dataclasses import dataclass, field
 from typing import Any
 
-from secopt.core.model import Opportunity, money, rank
+from secopt.core.model import Opportunity, is_currency, is_number, money, rank
 
 AREA = "sentinel"
 # Plans billed per GB at the Sentinel price and counted toward a commitment tier. A table whose plan
@@ -62,8 +61,8 @@ class SentinelConfig:
     def __post_init__(self) -> None:
         if self.spike_ratio <= 1:
             raise ValueError("spike_ratio must be greater than 1")
-        if self.price_per_gb is not None and self.price_per_gb <= 0:
-            raise ValueError("price_per_gb must be positive")
+        if self.price_per_gb is not None and not is_number(self.price_per_gb, 1e-6, 1e6):
+            raise ValueError("the price per GB must be a number greater than 0 (and below 1,000,000)")
 
 
 @dataclass
@@ -106,8 +105,7 @@ def _usage_rows(usage: Any) -> list[tuple[str, str, float, float]]:
         date, table = (row.get("date"), row.get("table")) if isinstance(row, dict) else (None, None)
         billable = row.get("billable_gb") if isinstance(row, dict) else None
         total = row.get("total_gb", billable) if isinstance(row, dict) else None
-        numbers_ok = all(isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v) and v >= 0
-                         for v in (billable, total))
+        numbers_ok = is_number(billable) and is_number(total)
         if not (isinstance(date, str) and _DATE.match(date) and isinstance(table, str) and table and numbers_ok):
             raise ValueError(f"usage row {n} is not valid: it needs a date (YYYY-MM-DD), a table name and "
                              "billable_gb as a number")
@@ -116,8 +114,7 @@ def _usage_rows(usage: Any) -> list[tuple[str, str, float, float]]:
 
 
 def _price(value: Any) -> float | None:
-    ok = isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) and value > 0
-    return float(value) if ok else None
+    return float(value) if is_number(value, 1e-6, 1e6) else None
 
 
 def analyze(snapshot: dict[str, Any], cfg: SentinelConfig | None = None) -> SentinelReport:
@@ -164,11 +161,14 @@ def analyze(snapshot: dict[str, Any], cfg: SentinelConfig | None = None) -> Sent
 
     # ---- pricing --------------------------------------------------------------------------
     prices = snapshot.get("prices") or {}
-    currency = str(prices.get("currency") or "USD")
+    currency = prices.get("currency") or "USD"
+    if not is_currency(currency):
+        raise ValueError("the currency in the snapshot's prices must be a three-letter code such as USD")
+    currency = currency.upper()
     payg = cfg.price_per_gb or _price(prices.get("payg_per_gb"))
     tiers = {}
     for level, price in (prices.get("commitment_tiers") or {}).items():
-        if str(level).isdigit() and int(level) > 0 and _price(price):
+        if str(level).isdigit() and 0 < int(level) <= 1_000_000 and _price(price):
             tiers[int(level)] = float(price)
     basic = _price(prices.get("basic_per_gb"))
     if cfg.price_per_gb:
@@ -181,7 +181,7 @@ def analyze(snapshot: dict[str, Any], cfg: SentinelConfig | None = None) -> Sent
     current_tier: int | None = None
     if str(workspace.get("sku") or "").lower() == "capacityreservation":
         level = workspace.get("capacity_reservation_gb")
-        current_tier = int(level) if isinstance(level, (int, float)) and not isinstance(level, bool) and level > 0 else None
+        current_tier = int(level) if is_number(level, 1, 1_000_000) else None
         if current_tier is not None and current_tier not in tiers and payg:
             notes.append(f"pricing: the workspace is on a {current_tier} GB/day commitment tier that has no "
                          "published price; costs are shown at pay-as-you-go rates.")
@@ -224,10 +224,18 @@ def analyze(snapshot: dict[str, Any], cfg: SentinelConfig | None = None) -> Sent
     monthly_cost = None if analytics_monthly is None else analytics_monthly + (basic_monthly or 0.0)
 
     def rate_for(plan: str) -> float | None:
-        """Price per GB of one more (or one less) GB in a table on this plan."""
+        """Average price per GB for a table on this plan: its share of the bill."""
         if plan in ANALYTICS_PLANS:
             return effective_rate
         return basic if plan == "Basic" and payg else None
+
+    # What one GB less would save. On a commitment tier that is larger than the ingestion, the
+    # average price per GB is above pay-as-you-go, but nobody can save more than the pay-as-you-go
+    # price by removing a GB (they would drop the tier first), so savings are capped there.
+    saving_rate = min(effective_rate, payg) if effective_rate and payg else None
+
+    def saving_rate_for(plan: str) -> float | None:
+        return saving_rate if plan in ANALYTICS_PLANS else rate_for(plan)
 
     # ---- tables ---------------------------------------------------------------------------
     rules = snapshot.get("rules")
@@ -280,8 +288,8 @@ def analyze(snapshot: dict[str, Any], cfg: SentinelConfig | None = None) -> Sent
         for t in unread[: cfg.max_table_opportunities]:
             saving = None
             upper = ""
-            if effective_rate and basic and effective_rate > basic:
-                saving = t["gb_per_day"] * 30 * (effective_rate - basic)
+            if saving_rate and basic and saving_rate > basic:
+                saving = t["gb_per_day"] * 30 * (saving_rate - basic)
                 upper = (f" Up to {money(saving, currency)} a month if the table can move to the Basic plan "
                          f"({money(basic, currency)} per GB); not every table supports it.")
             cost = f", about {money(t['monthly_cost'], currency)} a month" if t["monthly_cost"] is not None else ""
@@ -302,7 +310,7 @@ def analyze(snapshot: dict[str, Any], cfg: SentinelConfig | None = None) -> Sent
             continue
         grew = recent - previous
         if grew >= cfg.spike_min_gb_per_day and (previous == 0 or recent / previous >= cfg.spike_ratio):
-            rate = rate_for(t["plan"])
+            rate = saving_rate_for(t["plan"])
             opportunities.append(Opportunity(
                 f"spike:{t['table']}", AREA, f"{t['table']} ingestion jumped",
                 f"The last 7 days average {recent:,.1f} GB/day against {previous:,.1f} GB/day before"
@@ -340,7 +348,7 @@ def analyze(snapshot: dict[str, Any], cfg: SentinelConfig | None = None) -> Sent
         "basic_monthly_cost": round(basic_monthly, 2) if basic_monthly is not None else None,
         "effective_price_per_gb": round(effective_rate, 3) if effective_rate else None,
         "tables_with_billable_data": sum(1 for t in tables if t["billable_gb"] > 0),
-        "daily_cap_gb": cap if isinstance(cap, (int, float)) and not isinstance(cap, bool) and cap > 0 else None,
+        "daily_cap_gb": cap if is_number(cap, 1e-9) else None,
     }
     for t in tables:  # helper values used only for the spike check
         t.pop("recent_gb_per_day"), t.pop("previous_gb_per_day")

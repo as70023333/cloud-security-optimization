@@ -5,6 +5,8 @@ import http.server
 import io
 import json
 import os
+import subprocess
+import sys
 import tempfile
 import threading
 import unittest
@@ -13,16 +15,20 @@ from unittest import mock
 
 from secopt import cli
 from secopt.core.env import load_dotenv
-from secopt.core.http import HttpClient, HttpError, Response
+from secopt.core import http as http_module
+from secopt.core.http import HttpClient, HttpError, Response, same_origin
 from secopt.core.output import md_escape, md_inline
 from secopt.licenses.analyze import LicenseConfig, analyze as analyze_licenses
 from secopt.overlap.analyze import InventoryError, analyze as analyze_overlap, parse_inventory
 from secopt.report import sentinel_markdown
 from secopt.sentinel.analyze import analyze as analyze_sentinel
-from secopt.sentinel.collect import fetch_prices, usage_query
-from tests.fakes import FakeTransport, json_response
+from secopt.licenses.collect import GraphReader, collect as collect_licenses
+from secopt.sentinel.collect import AzureReader, collect as collect_sentinel, fetch_prices, usage_query
+from tests.fakes import FakeTransport, StaticCredential, json_response
 from tests.test_licenses_overlap import PRICES, license_demo, sku, tenant, user
-from tests.test_sentinel import REAL_ITEMS, demo, flat, snapshot
+from tests.test_sentinel import REAL_ITEMS, WORKSPACE, demo, flat, snapshot
+
+REPO = Path(__file__).resolve().parent.parent
 
 ENV = ("--env-file", "/nonexistent")
 
@@ -95,7 +101,7 @@ class SpikeTests(unittest.TestCase):
 
     def test_usage_query_groups_on_the_hour_the_data_belongs_to(self):
         query = usage_query(30)
-        self.assertIn("StartTime >= startofday(ago(30d)) and EndTime < startofday(now())", query)
+        self.assertIn("StartTime >= startofday(ago(30d)) and StartTime < startofday(now())", query)
         self.assertIn("Day = bin(StartTime, 1d)", query)
 
 
@@ -324,6 +330,235 @@ class DotenvTests(unittest.TestCase):
             with mock.patch.dict(os.environ, {}, clear=True):
                 load_dotenv(path)
                 self.assertEqual([os.environ[k] for k in "ABCDE"], ["abc123", "x # y", "plain", "", "p#ss"])
+
+
+class SecondPassTests(unittest.TestCase):
+    """Defects found when the first round of fixes was reviewed."""
+
+    def test_proxy_settings_that_arrive_after_import_are_used(self):
+        seen: list[str] = []
+
+        class Proxy(http.server.BaseHTTPRequestHandler):
+            def do_GET(self):  # noqa: N802
+                seen.append(self.path)
+                self.send_response(200)
+                self.end_headers()
+                self.wfile.write(b'{"via": "proxy"}')
+
+            def log_message(self, *args):
+                pass
+
+        server = http.server.HTTPServer(("127.0.0.1", 0), Proxy)
+        threading.Thread(target=server.serve_forever, daemon=True).start()
+        self.addCleanup(setattr, http_module, "_opener", None)
+        try:
+            http_module._opener = None
+            proxy = f"http://127.0.0.1:{server.server_port}"
+            # as load_dotenv would do, after secopt.core.http has been imported
+            with mock.patch.dict(os.environ, {"http_proxy": proxy, "HTTP_PROXY": proxy, "no_proxy": "", "NO_PROXY": ""}):
+                data = HttpClient(retries=0, timeout=5).request("GET", "http://service.invalid/v1/thing").json()
+        finally:
+            server.shutdown()
+            server.server_close()
+        self.assertEqual(data, {"via": "proxy"})
+        self.assertEqual(seen, ["http://service.invalid/v1/thing"])
+
+    def test_same_origin(self):
+        base = "https://management.azure.com"
+        self.assertTrue(same_origin("https://management.azure.com/x?y=1", base))
+        self.assertTrue(same_origin("https://MANAGEMENT.azure.com:443/x", base))
+        for other in ("http://management.azure.com/x", "https://management.azure.com:8443/x",
+                      "https://management.azure.com.evil.example/x", "https://evil.example/management.azure.com",
+                      "//management.azure.com/x", "management.azure.com/x", "https://[bad", ""):
+            self.assertFalse(same_origin(other, base), other)
+
+    def test_token_is_not_sent_to_a_plain_http_or_foreign_paging_link(self):
+        for link, followed in (("https://graph.microsoft.com:443/v1.0/subscribedSkus?page=2", True),
+                               ("http://graph.microsoft.com/v1.0/subscribedSkus?page=2", False),
+                               ("https://graph.microsoft.com.evil.example/v1.0/subscribedSkus?page=2", False)):
+            fake = FakeTransport()
+            fake.add("GET", r"page=2", json_response({"value": []}))
+            fake.add("GET", r"/v1.0/subscribedSkus", json_response({"value": [], "@odata.nextLink": link}))
+            graph = GraphReader(fake.client(), StaticCredential())
+            with self.subTest(link=link):
+                if followed:
+                    self.assertEqual(graph.get_all("/v1.0/subscribedSkus"), [])
+                    self.assertEqual(len(fake.calls), 2)
+                else:
+                    with self.assertRaises(HttpError):
+                        graph.get_all("/v1.0/subscribedSkus")
+                    self.assertEqual(len(fake.calls), 1)
+        fake = FakeTransport().add("GET", r"/tables", json_response(
+            {"value": [], "nextLink": "http://management.azure.com/next"}))
+        with self.assertRaises(HttpError):
+            AzureReader(fake.client(), StaticCredential()).arm_list(f"{WORKSPACE}/tables", "2022-10-01")
+        self.assertEqual(len(fake.calls), 1)
+
+    def test_a_malformed_address_fails_at_once_and_keeps_the_query_string_out_of_the_message(self):
+        sleeps: list[float] = []
+        with self.assertRaises(HttpError) as ctx:
+            HttpClient(sleep=sleeps.append).request("GET", "graph.microsoft.us/v1.0/users", params={"key": "SECRET"})
+        self.assertEqual(sleeps, [])
+        self.assertNotIn("SECRET", str(ctx.exception))
+        self.assertIn("not a valid URL", str(ctx.exception))
+
+    def test_text_at_the_start_of_a_line_cannot_open_a_block(self):
+        for hostile in ("# Pwned", "## x", "```", "~~~", "> quote", "- item", "+ item", "* item", "1. item", "2) item",
+                        "=====", "---"):
+            self.assertTrue(md_inline(hostile).startswith(("\\", "1\\", "2\\")), hostile)
+        self.assertEqual(md_inline("10.7 GB/day of billable data"), "10.7 GB/day of billable data")
+        self.assertEqual(md_inline("Acme `EDR`"), "Acme \\`EDR\\`")
+        report = analyze_overlap(parse_inventory({"tool": [
+            {"name": "```", "capabilities": ["edr"], "bundled_with": "Suite"},
+            {"name": "# Pwned", "annual_cost": 100, "capabilities": ["edr"]}]}, "test"))
+        from secopt.report import overlap_markdown
+        markdown = overlap_markdown(report, "test")
+        self.assertFalse([line for line in markdown.splitlines() if line.startswith(("```", "# Pwned"))])
+
+    def test_currency_must_be_a_three_letter_code(self):
+        snap = snapshot(flat("Syslog", 1.0))
+        snap["prices"]["currency"] = "<img src=x onerror=alert(1)>"
+        with self.assertRaises(ValueError):
+            analyze_sentinel(snap)
+        with self.assertRaises(ValueError):
+            LicenseConfig(prices={}, currency="USD**")
+        with self.assertRaises(InventoryError):
+            parse_inventory({"currency": "U$D", "tool": [{"name": "x", "capabilities": ["edr"]}]}, "test")
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "p.toml"
+            path.write_text('currency = "[x](https://evil.example)"\n[prices]\nSPE_E5 = 1\n', encoding="utf-8")
+            code, _, err = run("licenses", "--demo", "--prices", str(path), "--out", tmp, *ENV)
+            self.assertEqual(code, 2)
+            self.assertIn("three-letter code", err)
+
+    def test_a_suite_priced_at_zero_still_makes_its_add_ons_duplicates(self):
+        baseline = analyze_licenses(license_demo(), LicenseConfig(prices=PRICES))
+        report = analyze_licenses(license_demo(), LicenseConfig(prices={**PRICES, "SPE_E5": 0}))
+        self.assertGreater(baseline.totals["duplicates"], 0)
+        self.assertEqual(report.totals["duplicates"], baseline.totals["duplicates"])
+
+    def test_table_savings_never_exceed_the_pay_as_you_go_price(self):
+        # A 100 GB/day tier with about 27 GB/day: the average price per GB is far above pay-as-you-go.
+        usage = flat("SecurityEvent", 20.0, days=30) + flat("Foo_CL", 5.0, days=23) + flat("Foo_CL", 15.0, days=7, start=24)
+        report = analyze_sentinel(snapshot(usage, sku="CapacityReservation", level=100, rules=[],
+                                           tables=[table("SecurityEvent"), table("Foo_CL")]))
+        self.assertGreater(report.totals["effective_price_per_gb"], 4.0)
+        by_id = {o.id: o for o in report.opportunities}
+        grew = 15.0 - 5.0
+        self.assertAlmostEqual(by_id["spike:Foo_CL"].monthly_saving, grew * 30 * 4.0, places=2)
+        foo = next(t for t in report.tables if t["table"] == "Foo_CL")
+        self.assertAlmostEqual(by_id["unread-table:Foo_CL"].monthly_saving, foo["gb_per_day"] * 30 * (4.0 - 1.0), places=1)
+
+    def test_absurd_numbers_are_an_error_not_a_traceback_or_nan(self):
+        huge = 10 ** 400
+        edits = {
+            "sentinel": [lambda s: s["usage"][0].update(billable_gb=huge),
+                         lambda s: s["prices"].update(commitment_tiers={"100": huge}),
+                         lambda s: s["workspace"].update(sku="CapacityReservation", capacity_reservation_gb=float("inf"))],
+            "licenses": [lambda s: s["skus"][0].update(purchased=huge)],
+        }
+        for command, changes in edits.items():
+            for n, change in enumerate(changes):
+                with self.subTest(command=command, edit=n), tempfile.TemporaryDirectory() as tmp:
+                    base = demo() if command == "sentinel" else license_demo()
+                    change(base)
+                    path = Path(tmp) / "snap.json"
+                    path.write_text(json.dumps(base), encoding="utf-8")
+                    code, _, err = run(command, "--snapshot", str(path), "--out", str(Path(tmp) / "o"), "--quiet", *ENV)
+                    self.assertIn(code, (0, 2), err)
+                    self.assertNotIn("Traceback", err)
+                    for report in (Path(tmp) / "o").glob("*.json"):
+                        json.loads(report.read_text(encoding="utf-8"), parse_constant=self.fail)
+        with tempfile.TemporaryDirectory() as tmp:
+            for argv in (("sentinel", "--demo", "--price-per-gb", "1e308"),
+                         ("sentinel", "--demo", "--price-per-gb", "1e-9")):
+                code, _, err = run(*argv, "--out", tmp, *ENV)
+                self.assertEqual(code, 2)
+            stack = Path(tmp) / "stack.toml"
+            stack.write_text(f'[[tool]]\nname = "x"\nannual_cost = {huge}\ncapabilities = ["edr"]\n', encoding="utf-8")
+            self.assertEqual(run("overlap", str(stack), "--out", tmp, *ENV)[0], 2)
+            prices = Path(tmp) / "p.toml"
+            prices.write_text(f"[prices]\nSPE_E5 = {huge}\n", encoding="utf-8")
+            self.assertEqual(run("licenses", "--demo", "--prices", str(prices), "--out", tmp, *ENV)[0], 2)
+
+    def test_licence_snapshot_cannot_count_anything_twice(self):
+        e3 = sku("a", "SPE_E3", 10, 2, ["p1"])
+        clean = analyze_licenses(tenant([e3], [user("u1@x", ["a"], enabled=False), user("u2@x", ["a"])]),
+                                 LicenseConfig(prices={"SPE_E3": 10}))
+        repeated = analyze_licenses(tenant([e3], [user("u1@x", ["a", "a"], enabled=False), user("u2@x", ["a"])]),
+                                    LicenseConfig(prices={"SPE_E3": 10}))
+        self.assertEqual(repeated.totals, clean.totals)
+        self.assertEqual(clean.totals["on_disabled_accounts"], 1)
+        missing_enabled = user("u3@x", ["a"])
+        del missing_enabled["enabled"]
+        for bad in (tenant([e3, dict(e3)], []), tenant([e3], [user("u1@x", ["a"]), user("u1@x", ["a"])]),
+                    tenant([e3], [missing_enabled])):
+            with self.assertRaises(ValueError):
+                analyze_licenses(bad, LicenseConfig())
+
+    def test_collectors_do_not_produce_rows_the_analysis_rejects(self):
+        fake = FakeTransport()
+        fake.add("GET", r"/v1.0/subscribedSkus", json_response({"value": [
+            {"skuId": "a", "skuPartNumber": "SPE_E3", "appliesTo": "User", "consumedUnits": 2,
+             "prepaidUnits": {"enabled": 5}, "servicePlans": []}]}))
+        fake.add("GET", r"/v1.0/users", json_response({"value": [
+            {"id": "id-1", "userPrincipalName": None, "accountEnabled": True, "createdDateTime": "2024-01-01T00:00:00Z",
+             "assignedLicenses": [{"skuId": "a"}, {"skuId": "a"}]},
+            {"id": "id-2", "userPrincipalName": None, "accountEnabled": None, "assignedLicenses": [{"skuId": "a"}]}]}))
+        snap = collect_licenses(GraphReader(fake.client(), StaticCredential()))
+        self.assertEqual([(u["upn"], u["sku_ids"], u["enabled"]) for u in snap["users"]],
+                         [("id-1", ["a"], True), ("id-2", ["a"], False)])
+        analyze_licenses(snap, LicenseConfig())
+
+        azure = FakeTransport()
+        azure.add("GET", r"workspaces/soc-ws\?", json_response(
+            {"name": "soc-ws", "location": "eastus", "properties": {"customerId": "cid", "sku": {"name": "PerGB2018"}}}))
+        azure.add("GET", r"/tables", json_response({"value": []}))
+        azure.add("GET", r"alertRules", json_response({"value": []}))
+        azure.add("POST", r"/v1/workspaces/cid/query", json_response({"tables": [{
+            "columns": [{"name": "Day"}, {"name": "DataType"}, {"name": "BillableMB"}, {"name": "TotalMB"}],
+            "rows": [["2026-09-01T00:00:00Z", "Syslog", 2000.0, 2000.0], ["2026-09-01T00:00:00Z", "", 5.0, 5.0],
+                     ["2026-09-01T00:00:00Z", None, 5.0, 5.0], [None, "Syslog", 1.0, 1.0],
+                     ["2026-09-02T00:00:00Z", "Syslog", -3.0, None]]}]}))
+        azure.add("GET", r"prices\.azure\.com", json_response({"Items": REAL_ITEMS, "NextPageLink": None}))
+        snap = collect_sentinel(AzureReader(azure.client(), StaticCredential()), WORKSPACE)
+        self.assertEqual([(r["date"], r["table"], r["billable_gb"]) for r in snap["usage"]],
+                         [("2026-09-01", "Syslog", 2.0), ("2026-09-02", "Syslog", 0.0)])
+        analyze_sentinel(snap)
+
+    def test_dotenv_value_that_is_only_a_comment_is_empty(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / ".env"
+            path.write_text("A=   # only a comment\nB=#x\nC=a#b\n", encoding="utf-8")
+            with mock.patch.dict(os.environ, {}, clear=True):
+                load_dotenv(path)
+                self.assertEqual([os.environ[k] for k in "ABC"], ["", "", "a#b"])
+
+
+class PipeTests(unittest.TestCase):
+    """Run as a real process: output is flushed when the interpreter exits, which a test in the
+    same process cannot see."""
+
+    def child(self, stdout) -> subprocess.Popen:
+        env = {k: v for k, v in os.environ.items() if k != "PYTHONUNBUFFERED"}
+        return subprocess.Popen([sys.executable, "-m", "secopt", "overlap", "--list-capabilities"], cwd=REPO, env=env,
+                                stdout=stdout, stderr=subprocess.PIPE)
+
+    def test_a_reader_that_stops_early_is_not_an_error(self):
+        process = self.child(subprocess.PIPE)
+        process.stdout.close()  # like "secopt ... | head -0": nobody reads
+        _, err = process.communicate(timeout=60)
+        self.assertEqual(process.returncode, 0, err)
+        self.assertNotIn(b"Exception ignored", err)
+        self.assertNotIn(b"Traceback", err)
+
+    @unittest.skipUnless(os.path.exists("/dev/full"), "needs /dev/full")
+    def test_output_that_cannot_be_written_exits_2(self):
+        with open("/dev/full", "w") as full:
+            process = self.child(full)
+            _, err = process.communicate(timeout=60)
+        self.assertEqual(process.returncode, 2, err)
+        self.assertTrue(err.startswith(b"error: "), err)
 
 
 if __name__ == "__main__":

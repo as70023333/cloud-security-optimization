@@ -170,8 +170,9 @@ Automation account. It uses only the Python standard library: **no third-party p
 time**, so there is nothing extra to keep patched. Run from a clone, it needs nothing from the
 internet at all (`pip install .` fetches `setuptools` to build the package).
 
-It needs outbound HTTPS to Microsoft's sign-in, Azure Resource Manager, Log Analytics and Graph
-endpoints for the two live reviews. `secopt overlap` and every `--demo` run work fully offline.
+It needs outbound HTTPS to Microsoft's sign-in, Azure Resource Manager, Log Analytics, Graph and
+the public Azure price list (`prices.azure.com`) for the two live reviews. `HTTPS_PROXY` is
+honoured, from the environment or from `.env`. `secopt overlap` and every `--demo` run work fully offline.
 
 ## How to use it
 
@@ -475,11 +476,11 @@ Details: [docs/how-the-numbers-work.md](docs/how-the-numbers-work.md).
   is a Log Analytics query.
 - **No telemetry.** It talks to Microsoft's APIs and nowhere else.
 - **Tokens stay with their host.** Redirects are never followed, and a paging link that points
-  to another host is refused.
+  to another host, or to the same host over plain http, is refused.
 - **Secrets are never printed.** Error messages leave out query strings and credentials.
-- **Names are treated as untrusted input.** HTML, links and images in names from your tenant,
-  a snapshot or an inventory are neutralised in Markdown, and spreadsheet formulas are neutralised
-  in CSV. A snapshot cannot make a report land outside the output folder.
+- **Names are treated as untrusted input.** HTML, links, images, headings and code blocks in
+  names from your tenant, a snapshot or an inventory are neutralised in Markdown, and spreadsheet
+  formulas are neutralised in CSV. A snapshot cannot make a report land outside the output folder.
 - **Reports are private by default.** `reports/`, snapshots, `.env` and `my-*.toml` are in
   `.gitignore`.
 
@@ -526,7 +527,7 @@ examples/
   security-stack.toml     inventory to copy
   license-prices.example.toml
   reports/                sample output from the demos
-tests/                    100 tests, no outside network
+tests/                    114 tests, no outside network
 ```
 
 Collection and analysis are separate on purpose. Collectors produce a plain JSON snapshot;
@@ -539,9 +540,9 @@ the tests possible, and it is why the analysis can be checked without access to 
 python3 -m unittest discover -s tests -t .
 ```
 
-100 tests, run on Python 3.11, 3.12 and 3.13 in CI. They never leave the machine: HTTP goes
-through a fake transport, and the one test that needs real sockets (redirects are not followed)
-uses two servers on localhost. They cover the pricing arithmetic, table plans, the once-only
+114 tests, run on Python 3.11, 3.12 and 3.13 in CI. They never leave the machine: HTTP goes
+through a fake transport, and the two tests that need real sockets (redirects are not followed,
+proxy settings are honoured) use servers on localhost. They cover the pricing arithmetic, table plans, the once-only
 counting of licences, the redundancy logic, paging and retries, the permission fallbacks, damaged
 snapshots, hostile names in reports, and that the sample reports in this repository match what
 the code produces.

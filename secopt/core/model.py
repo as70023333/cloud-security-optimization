@@ -2,10 +2,25 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import asdict, dataclass, field
 from typing import Any, Iterable
 
 EFFORTS = ("low", "medium", "high")
+
+
+def is_number(value: Any, low: float = 0.0, high: float = 1e12) -> bool:
+    """A real, finite number within sensible bounds. Rejects booleans, NaN, infinity and numbers so
+    large that arithmetic on them overflows; prices and volumes come from files people edit."""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return False
+    if isinstance(value, float) and not math.isfinite(value):
+        return False
+    return low <= value <= high
+
+
+def is_currency(value: Any) -> bool:
+    return isinstance(value, str) and len(value) == 3 and value.isascii() and value.isalpha()
 
 
 @dataclass

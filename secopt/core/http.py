@@ -42,7 +42,30 @@ class HttpError(Exception):
 
 
 class TransportError(Exception):
-    """A network-level failure (DNS, TLS, timeout, connection reset)."""
+    """A network-level failure (DNS, TLS, timeout, connection reset).
+
+    ``retry`` is False for failures that will be the same next time, such as a malformed address.
+    """
+
+    def __init__(self, message: str, *, retry: bool = True) -> None:
+        super().__init__(message)
+        self.retry = retry
+
+
+def same_origin(url: str, base: str) -> bool:
+    """True when ``url`` has the scheme, host and port of ``base``.
+
+    Used before a token is sent to a paging link. Compares the effective port, so an explicit
+    ":443" on an https link is the same origin, and a plain-http link to the same host is not.
+    """
+    try:
+        a, b = urllib.parse.urlsplit(url), urllib.parse.urlsplit(base)
+        default = {"https": 443, "http": 80}
+        return (a.scheme.lower() == b.scheme.lower() and bool(a.hostname)
+                and (a.hostname or "").lower() == (b.hostname or "").lower()
+                and (a.port or default.get(a.scheme.lower())) == (b.port or default.get(b.scheme.lower())))
+    except ValueError:
+        return False
 
 
 @dataclass
@@ -88,7 +111,16 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
-_OPENER = urllib.request.build_opener(_NoRedirect)
+_opener: urllib.request.OpenerDirector | None = None
+
+
+def _get_opener() -> urllib.request.OpenerDirector:
+    """Built on first use, not at import: urllib reads the proxy settings when the opener is
+    created, and HTTPS_PROXY may come from a .env file that is loaded after this module."""
+    global _opener
+    if _opener is None:
+        _opener = urllib.request.build_opener(_NoRedirect)
+    return _opener
 
 
 def urllib_transport(req: Request) -> Response:
@@ -98,7 +130,11 @@ def urllib_transport(req: Request) -> Response:
     """
     try:
         request = urllib.request.Request(req.url, data=req.body, method=req.method, headers=req.headers)
-        with _OPENER.open(request, timeout=req.timeout) as resp:  # noqa: S310 - URLs are built by the tools
+    except ValueError as exc:  # no scheme, unknown scheme: the same every time, and the text can hold a query string
+        raise TransportError("the address is not a valid URL (check the *_BASE_URL and AZURE_AUTHORITY_HOST "
+                             "settings: they need https://)", retry=False) from exc
+    try:
+        with _get_opener().open(request, timeout=req.timeout) as resp:  # noqa: S310 - URLs are built by the tools
             return Response(resp.status, resp.read(), dict(resp.headers.items()))
     except urllib.error.HTTPError as exc:
         try:
@@ -107,8 +143,10 @@ def urllib_transport(req: Request) -> Response:
             body = b""
         headers = dict(exc.headers.items()) if exc.headers else {}
         return Response(exc.code, body, headers)
+    except (http.client.InvalidURL, ValueError) as exc:
+        raise TransportError("the address is not a valid URL", retry=False) from exc
     except (urllib.error.URLError, socket.timeout, TimeoutError, ConnectionError, ssl.SSLError,
-            http.client.HTTPException, ValueError) as exc:
+            http.client.HTTPException) as exc:
         reason = getattr(exc, "reason", None) or exc
         raise TransportError(str(reason) or type(exc).__name__) from exc
 
@@ -195,7 +233,7 @@ class HttpClient:
             try:
                 resp = self.transport(Request(method.upper(), url, dict(hdrs), data, self.timeout))
             except TransportError as exc:
-                if attempt > self.retries:
+                if attempt > self.retries or not getattr(exc, "retry", True):
                     raise HttpError(0, str(exc), url=redact_url(url)) from exc
                 self._sleep(self._backoff(attempt))
                 continue

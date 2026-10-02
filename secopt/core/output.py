@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import os
 import sys
 from datetime import date, datetime
@@ -36,15 +37,23 @@ def md_escape(value: Any) -> str:
 
 
 def _neutralise(text: str) -> str:
-    """Stop text from being read as HTML, a link or an image. With no "<" left no tag can open;
-    with "[" and "]" escaped no link or image can form."""
-    return text.replace("&", "&amp;").replace("<", "&lt;").replace("[", "\\[").replace("]", "\\]")
+    """Stop text from being read as HTML, a link, an image or code. With no "<" left no tag can
+    open; with "[" and "]" escaped no link or image can form; escaped backticks open no code span."""
+    return (text.replace("&", "&amp;").replace("<", "&lt;").replace("[", "\\[").replace("]", "\\]")
+            .replace("`", "\\`"))
+
+
+# Characters that start a block when they open a line: heading, quote, list, rule, code fence.
+_BLOCK_START = re.compile(r"^(\s*)(?:([#>\-+*~=])|(\d+)([.)])(?=\s|$))")
 
 
 def md_inline(value: Any) -> str:
     """Text for a heading or paragraph: one line, no raw HTML, no links or images. Names in these
     reports come from tenants and inventory files, so they are treated as untrusted."""
-    return _neutralise(" ".join(("" if value is None else str(value)).split()).replace("\\", "\\\\"))
+    text = _neutralise(" ".join(("" if value is None else str(value)).split()).replace("\\", "\\\\"))
+    # The text may be placed at the start of a line, so it must not open a block of its own.
+    return _BLOCK_START.sub(lambda m: m.group(1) + (f"\\{m.group(2)}" if m.group(2) else f"{m.group(3)}\\{m.group(4)}"),
+                            text)
 
 
 def md_table(headers: Sequence[str], rows: Iterable[Sequence[Any]]) -> str:
@@ -66,7 +75,9 @@ def _json_default(obj: Any) -> Any:
 
 
 def to_json(obj: Any) -> str:
-    return json.dumps(obj, indent=2, default=_json_default, ensure_ascii=False)
+    # allow_nan=False: NaN and Infinity are not JSON, and a report that other tools cannot parse is
+    # worse than an error.
+    return json.dumps(obj, indent=2, default=_json_default, ensure_ascii=False, allow_nan=False)
 
 
 def _cell(value: Any) -> str:

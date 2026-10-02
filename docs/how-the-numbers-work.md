@@ -18,7 +18,7 @@ Volume comes from the workspace's own `Usage` table, which is what Azure bills f
 ```kusto
 Usage
 | where TimeGenerated > ago(32d)
-| where StartTime >= startofday(ago(30d)) and EndTime < startofday(now())
+| where StartTime >= startofday(ago(30d)) and StartTime < startofday(now())
 | summarize BillableMB = sumif(Quantity, IsBillable == true), TotalMB = sum(Quantity) by DataType, Day = bin(StartTime, 1d)
 | project Day, DataType, BillableMB, TotalMB
 | order by Day asc, DataType asc
@@ -26,7 +26,8 @@ Usage
 
 `Quantity` is in MB and Azure bills in decimal GB, so it is divided by 1000. Usage records are
 hourly; they are grouped by the hour the data belongs to (`StartTime`), as in Microsoft's own
-billing queries. Only whole days are used, so a half-finished today does not pull the average down.
+billing queries. Every hour that started before today's midnight is included and nothing after,
+so only whole days are used and a half-finished today does not pull the average down.
 
 ### Table plans
 
@@ -77,7 +78,9 @@ a month. Saving: about $4,668 a month.
 | Long interactive retention | An Analytics table averaging 0.5 GB/day or more keeps more than the 90 days Sentinel includes | None: retention billing depends on how much data has aged, which the tool does not measure |
 
 *Effective price* is the monthly Analytics-plan cost divided by the monthly Analytics-plan
-volume, so it already reflects a commitment tier if you have one.
+volume, so it already reflects a commitment tier if you have one. For savings it is capped at the
+pay-as-you-go price: on a commitment tier much larger than your ingestion the average price per
+GB is higher than pay-as-you-go, but removing a GB can never save more than that.
 
 Table savings are marked with `*` and **left out of the total**. They overlap: a table can be both
 unread and spiking, and trimming tables changes which pricing plan is cheapest. Adding them to
@@ -115,8 +118,10 @@ Separately, **unassigned** = purchased − assigned, per product.
 Waste per product = (unassigned + disabled + inactive + duplicate) × your monthly price.
 
 **Duplicates are worked out from your tenant, not from a product list.** Product B is "included
-in" product A when every user-level service plan in B is also in A, as reported by Graph. That
-keeps working when Microsoft renames or repackages products.
+in" product A when every user-level service plan in B is also in A, and A has more besides, as
+reported by Graph. That keeps working when Microsoft renames or repackages products. Two products
+with exactly the same plans are not flagged, because neither is the add-on, and a trial or free
+product is never treated as the suite.
 
 **Prices are yours.** Microsoft does not publish licence prices through an API, and what you pay
 depends on your agreement, so the tool reads them from a file you write (`--prices`). A product

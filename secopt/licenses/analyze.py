@@ -12,13 +12,12 @@ user-level service plan in B is also in A. No hard-coded product tables to go st
 
 from __future__ import annotations
 
-import math
 from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any
 
-from secopt.core.model import Opportunity, rank
+from secopt.core.model import Opportunity, is_currency, is_number, rank
 from secopt.core.timeutil import days_between, parse_time
 
 AREA = "licenses"
@@ -55,8 +54,11 @@ class LicenseConfig:
         if self.inactive_days < 1:
             raise ValueError("inactive_days must be at least 1")
         for part, price in self.prices.items():
-            if not isinstance(price, (int, float)) or isinstance(price, bool) or not math.isfinite(price) or price < 0:
-                raise ValueError(f"price for {part} must be a non-negative number")
+            if not is_number(price, 0, 1e6):
+                raise ValueError(f"the price for {part} must be a number, 0 or more (and below 1,000,000)")
+        if not is_currency(self.currency):
+            raise ValueError("the currency must be a three-letter code such as USD")
+        self.currency = self.currency.upper()
 
 
 @dataclass
@@ -84,7 +86,7 @@ def coverage(skus: list[dict[str, Any]]) -> dict[str, set[str]]:
 
 
 def _count(value: Any) -> bool:
-    return isinstance(value, int) and not isinstance(value, bool) and value >= 0
+    return isinstance(value, int) and is_number(value, 0, 10**9)
 
 
 def _checked_skus(skus: Any) -> list[dict[str, Any]]:
@@ -97,6 +99,9 @@ def _checked_skus(skus: Any) -> list[dict[str, Any]]:
                 and _count(sku.get("assigned")) and isinstance(sku.get("service_plans") or [], list)):
             raise ValueError(f"product {n} in the snapshot is not valid: it needs sku_id, part_number, and "
                              "purchased and assigned as whole numbers")
+    ids = [s["sku_id"] for s in skus]
+    if len(set(ids)) != len(ids):
+        raise ValueError("a product is listed twice in the snapshot (same sku_id), which would count it twice")
     return skus
 
 
@@ -106,9 +111,13 @@ def _checked_users(users: Any) -> list[dict[str, Any]] | None:
     if not isinstance(users, list):
         raise ValueError("the snapshot's 'users' section is not a list")
     for n, user in enumerate(users, start=1):
-        if not (isinstance(user, dict) and isinstance(user.get("upn"), str)
+        if not (isinstance(user, dict) and isinstance(user.get("upn"), str) and isinstance(user.get("enabled"), bool)
                 and isinstance(user.get("sku_ids"), list) and all(isinstance(s, str) for s in user["sku_ids"])):
-            raise ValueError(f"user {n} in the snapshot is not valid: it needs upn and a list of sku_ids")
+            raise ValueError(f"user {n} in the snapshot is not valid: it needs upn, enabled (true or false) "
+                             "and a list of sku_ids")
+    ids = [u.get("id") or u["upn"] for u in users if u.get("id") or u["upn"]]
+    if len(set(ids)) != len(ids):
+        raise ValueError("a user is listed twice in the snapshot, which would count their licences twice")
     return users
 
 
@@ -143,7 +152,10 @@ def analyze(snapshot: dict[str, Any], cfg: LicenseConfig | None = None) -> Licen
                                                "duplicate": defaultdict(list)}
     duplicate_of: dict[str, set[str]] = defaultdict(set)
     for user in users or []:
-        held = [s for s in user.get("sku_ids", []) if s in by_id and paid(s)]
+        owned = sorted({s for s in user.get("sku_ids", []) if s in by_id})
+        held = [s for s in owned if paid(s)]
+        # A suite still covers the add-on when you priced the suite at 0; a trial does not count.
+        suites_owned = {s for s in owned if by_id[s]["part_number"] not in FREE_PRODUCTS}
         last = parse_time(user.get("last_sign_in"))
         created = parse_time(user.get("created"))
         stale = False
@@ -156,7 +168,7 @@ def analyze(snapshot: dict[str, Any], cfg: LicenseConfig | None = None) -> Licen
             elif stale:
                 reclaim["inactive"][sku_id].append(user["upn"])
             else:
-                suites = covered_by.get(sku_id, set()) & set(held)
+                suites = covered_by.get(sku_id, set()) & suites_owned
                 if suites:
                     reclaim["duplicate"][sku_id].append(user["upn"])
                     duplicate_of[sku_id] |= suites
