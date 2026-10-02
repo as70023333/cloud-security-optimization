@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloud-security-optimization"
+version = "1.0.0"
+description = "Find what a security stack costs, what is unused and what overlaps: Microsoft Sentinel cost review, unused Microsoft 365 licences, security tool overlap. Read-only, no dependencies."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Alex S., Security" }]
+keywords = ["security", "finops", "microsoft-sentinel", "microsoft-365", "licensing", "cost-optimization", "siem"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/as70023333/cloud-security-optimization"
+Issues = "https://github.com/as70023333/cloud-security-optimization/issues"
+
+[project.scripts]
+secopt = "secopt.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["secopt*"]
+
+[tool.setuptools.package-data]
+"secopt.sentinel" = ["demo.json"]
+"secopt.licenses" = ["demo.json", "demo_prices.toml"]
+"secopt.overlap" = ["demo_stack.toml"]

@@ -1,0 +1,4430 @@
+{
+ "kind": "licenses",
+ "captured_at": "2026-10-01T12:00:00Z",
+ "skus": [
+  {
+   "sku_id": "sku-e5",
+   "part_number": "SPE_E5",
+   "status": "Enabled",
+   "applies_to": "User",
+   "purchased": 120,
+   "suspended": 0,
+   "assigned": 104,
+   "service_plans": [
+    "plan-entra-p1",
+    "plan-entra-p2",
+    "plan-exchange",
+    "plan-intune",
+    "plan-mdca",
+    "plan-mde-p1",
+    "plan-mde-p2",
+    "plan-mdi",
+    "plan-mdo-p1",
+    "plan-mdo-p2",
+    "plan-office-apps"
+   ]
+  },
+  {
+   "sku_id": "sku-e3",
+   "part_number": "SPE_E3",
+   "status": "Enabled",
+   "applies_to": "User",
+   "purchased": 300,
+   "suspended": 0,
+   "assigned": 280,
+   "service_plans": [
+    "plan-entra-p1",
+    "plan-exchange",
+    "plan-intune",
+    "plan-mde-p1",
+    "plan-office-apps"
+   ]
+  },
+  {
+   "sku_id": "sku-p2",
+   "part_number": "AAD_PREMIUM_P2",
+   "status": "Enabled",
+   "applies_to": "User",
+   "purchased": 60,
+   "suspended": 0,
+   "assigned": 45,
+   "service_plans": [
+    "plan-entra-p1",
+    "plan-entra-p2"
+   ]
+  },
+  {
+   "sku_id": "sku-mde",
+   "part_number": "WIN_DEF_ATP",
+   "status": "Enabled",
+   "applies_to": "User",
+   "purchased": 50,
+   "suspended": 0,
+   "assigned": 50,
+   "service_plans": [
+    "plan-mde-p1",
+    "plan-mde-p2"
+   ]
+  },
+  {
+   "sku_id": "sku-mdo2",
+   "part_number": "THREAT_INTELLIGENCE",
+   "status": "Enabled",
+   "applies_to": "User",
+   "purchased": 40,
+   "suspended": 0,
+   "assigned": 12,
+   "service_plans": [
+    "plan-mdo-p1",
+    "plan-mdo-p2"
+   ]
+  },
+  {
+   "sku_id": "sku-flow",
+   "part_number": "FLOW_FREE",
+   "status": "Enabled",
+   "applies_to": "User",
+   "purchased": 10000,
+   "suspended": 0,
+   "assigned": 30,
+   "service_plans": [
+    "plan-flow-free"
+   ]
+  }
+ ],
+ "users": [
+  {
+   "id": "user-0001",
+   "upn": "user0001@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0002",
+   "upn": "user0002@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0003",
+   "upn": "user0003@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0004",
+   "upn": "user0004@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0005",
+   "upn": "user0005@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0006",
+   "upn": "user0006@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0007",
+   "upn": "user0007@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0008",
+   "upn": "user0008@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0009",
+   "upn": "user0009@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0010",
+   "upn": "user0010@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0011",
+   "upn": "user0011@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0012",
+   "upn": "user0012@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0013",
+   "upn": "user0013@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0014",
+   "upn": "user0014@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0015",
+   "upn": "user0015@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0016",
+   "upn": "user0016@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0017",
+   "upn": "user0017@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0018",
+   "upn": "user0018@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0019",
+   "upn": "user0019@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0020",
+   "upn": "user0020@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0021",
+   "upn": "user0021@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0022",
+   "upn": "user0022@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0023",
+   "upn": "user0023@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0024",
+   "upn": "user0024@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0025",
+   "upn": "user0025@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0026",
+   "upn": "user0026@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0027",
+   "upn": "user0027@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0028",
+   "upn": "user0028@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0029",
+   "upn": "user0029@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0030",
+   "upn": "user0030@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0031",
+   "upn": "user0031@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0032",
+   "upn": "user0032@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0033",
+   "upn": "user0033@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0034",
+   "upn": "user0034@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0035",
+   "upn": "user0035@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0036",
+   "upn": "user0036@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0037",
+   "upn": "user0037@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0038",
+   "upn": "user0038@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0039",
+   "upn": "user0039@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0040",
+   "upn": "user0040@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0041",
+   "upn": "user0041@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0042",
+   "upn": "user0042@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0043",
+   "upn": "user0043@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0044",
+   "upn": "user0044@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0045",
+   "upn": "user0045@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0046",
+   "upn": "user0046@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0047",
+   "upn": "user0047@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0048",
+   "upn": "user0048@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0049",
+   "upn": "user0049@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0050",
+   "upn": "user0050@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0051",
+   "upn": "user0051@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0052",
+   "upn": "user0052@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0053",
+   "upn": "user0053@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0054",
+   "upn": "user0054@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0055",
+   "upn": "user0055@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0056",
+   "upn": "user0056@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0057",
+   "upn": "user0057@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0058",
+   "upn": "user0058@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0059",
+   "upn": "user0059@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0060",
+   "upn": "user0060@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0061",
+   "upn": "user0061@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0062",
+   "upn": "user0062@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0063",
+   "upn": "user0063@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0064",
+   "upn": "user0064@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0065",
+   "upn": "user0065@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0066",
+   "upn": "user0066@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0067",
+   "upn": "user0067@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0068",
+   "upn": "user0068@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0069",
+   "upn": "user0069@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0070",
+   "upn": "user0070@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0071",
+   "upn": "user0071@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0072",
+   "upn": "user0072@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0073",
+   "upn": "user0073@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0074",
+   "upn": "user0074@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0075",
+   "upn": "user0075@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0076",
+   "upn": "user0076@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0077",
+   "upn": "user0077@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0078",
+   "upn": "user0078@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0079",
+   "upn": "user0079@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0080",
+   "upn": "user0080@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0081",
+   "upn": "user0081@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0082",
+   "upn": "user0082@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0083",
+   "upn": "user0083@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0084",
+   "upn": "user0084@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0085",
+   "upn": "user0085@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0086",
+   "upn": "user0086@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0087",
+   "upn": "user0087@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0088",
+   "upn": "user0088@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0089",
+   "upn": "user0089@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0090",
+   "upn": "user0090@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0091",
+   "upn": "user0091@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0092",
+   "upn": "user0092@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0093",
+   "upn": "user0093@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0094",
+   "upn": "user0094@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-03-10T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0095",
+   "upn": "user0095@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-03-10T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0096",
+   "upn": "user0096@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-03-10T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0097",
+   "upn": "user0097@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-03-10T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0098",
+   "upn": "user0098@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-03-10T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0099",
+   "upn": "user0099@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0100",
+   "upn": "user0100@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0101",
+   "upn": "user0101@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0102",
+   "upn": "user0102@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0103",
+   "upn": "user0103@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0104",
+   "upn": "user0104@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e5"
+   ]
+  },
+  {
+   "id": "user-0105",
+   "upn": "user0105@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0106",
+   "upn": "user0106@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0107",
+   "upn": "user0107@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0108",
+   "upn": "user0108@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0109",
+   "upn": "user0109@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0110",
+   "upn": "user0110@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0111",
+   "upn": "user0111@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0112",
+   "upn": "user0112@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0113",
+   "upn": "user0113@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0114",
+   "upn": "user0114@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0115",
+   "upn": "user0115@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0116",
+   "upn": "user0116@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0117",
+   "upn": "user0117@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0118",
+   "upn": "user0118@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0119",
+   "upn": "user0119@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0120",
+   "upn": "user0120@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0121",
+   "upn": "user0121@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0122",
+   "upn": "user0122@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0123",
+   "upn": "user0123@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0124",
+   "upn": "user0124@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0125",
+   "upn": "user0125@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0126",
+   "upn": "user0126@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0127",
+   "upn": "user0127@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0128",
+   "upn": "user0128@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0129",
+   "upn": "user0129@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0130",
+   "upn": "user0130@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0131",
+   "upn": "user0131@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0132",
+   "upn": "user0132@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0133",
+   "upn": "user0133@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0134",
+   "upn": "user0134@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0135",
+   "upn": "user0135@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0136",
+   "upn": "user0136@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0137",
+   "upn": "user0137@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0138",
+   "upn": "user0138@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0139",
+   "upn": "user0139@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0140",
+   "upn": "user0140@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0141",
+   "upn": "user0141@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-p2"
+   ]
+  },
+  {
+   "id": "user-0142",
+   "upn": "user0142@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0143",
+   "upn": "user0143@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0144",
+   "upn": "user0144@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0145",
+   "upn": "user0145@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0146",
+   "upn": "user0146@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0147",
+   "upn": "user0147@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0148",
+   "upn": "user0148@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0149",
+   "upn": "user0149@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0150",
+   "upn": "user0150@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0151",
+   "upn": "user0151@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0152",
+   "upn": "user0152@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0153",
+   "upn": "user0153@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0154",
+   "upn": "user0154@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0155",
+   "upn": "user0155@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0156",
+   "upn": "user0156@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0157",
+   "upn": "user0157@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0158",
+   "upn": "user0158@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0159",
+   "upn": "user0159@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0160",
+   "upn": "user0160@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0161",
+   "upn": "user0161@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0162",
+   "upn": "user0162@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0163",
+   "upn": "user0163@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0164",
+   "upn": "user0164@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0165",
+   "upn": "user0165@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0166",
+   "upn": "user0166@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0167",
+   "upn": "user0167@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0168",
+   "upn": "user0168@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0169",
+   "upn": "user0169@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0170",
+   "upn": "user0170@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0171",
+   "upn": "user0171@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0172",
+   "upn": "user0172@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0173",
+   "upn": "user0173@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0174",
+   "upn": "user0174@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0175",
+   "upn": "user0175@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0176",
+   "upn": "user0176@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0177",
+   "upn": "user0177@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0178",
+   "upn": "user0178@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0179",
+   "upn": "user0179@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0180",
+   "upn": "user0180@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0181",
+   "upn": "user0181@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mde"
+   ]
+  },
+  {
+   "id": "user-0182",
+   "upn": "user0182@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0183",
+   "upn": "user0183@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0184",
+   "upn": "user0184@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0185",
+   "upn": "user0185@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0186",
+   "upn": "user0186@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0187",
+   "upn": "user0187@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0188",
+   "upn": "user0188@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0189",
+   "upn": "user0189@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0190",
+   "upn": "user0190@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0191",
+   "upn": "user0191@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0192",
+   "upn": "user0192@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0193",
+   "upn": "user0193@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3",
+    "sku-mdo2"
+   ]
+  },
+  {
+   "id": "user-0194",
+   "upn": "user0194@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0195",
+   "upn": "user0195@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0196",
+   "upn": "user0196@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0197",
+   "upn": "user0197@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0198",
+   "upn": "user0198@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0199",
+   "upn": "user0199@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0200",
+   "upn": "user0200@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0201",
+   "upn": "user0201@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0202",
+   "upn": "user0202@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0203",
+   "upn": "user0203@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0204",
+   "upn": "user0204@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0205",
+   "upn": "user0205@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0206",
+   "upn": "user0206@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0207",
+   "upn": "user0207@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0208",
+   "upn": "user0208@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0209",
+   "upn": "user0209@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0210",
+   "upn": "user0210@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0211",
+   "upn": "user0211@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0212",
+   "upn": "user0212@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0213",
+   "upn": "user0213@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0214",
+   "upn": "user0214@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0215",
+   "upn": "user0215@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0216",
+   "upn": "user0216@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0217",
+   "upn": "user0217@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0218",
+   "upn": "user0218@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0219",
+   "upn": "user0219@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0220",
+   "upn": "user0220@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0221",
+   "upn": "user0221@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0222",
+   "upn": "user0222@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0223",
+   "upn": "user0223@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0224",
+   "upn": "user0224@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0225",
+   "upn": "user0225@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0226",
+   "upn": "user0226@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0227",
+   "upn": "user0227@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0228",
+   "upn": "user0228@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0229",
+   "upn": "user0229@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0230",
+   "upn": "user0230@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0231",
+   "upn": "user0231@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0232",
+   "upn": "user0232@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0233",
+   "upn": "user0233@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0234",
+   "upn": "user0234@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0235",
+   "upn": "user0235@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0236",
+   "upn": "user0236@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0237",
+   "upn": "user0237@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0238",
+   "upn": "user0238@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0239",
+   "upn": "user0239@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0240",
+   "upn": "user0240@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0241",
+   "upn": "user0241@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0242",
+   "upn": "user0242@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0243",
+   "upn": "user0243@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0244",
+   "upn": "user0244@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0245",
+   "upn": "user0245@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0246",
+   "upn": "user0246@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0247",
+   "upn": "user0247@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0248",
+   "upn": "user0248@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0249",
+   "upn": "user0249@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0250",
+   "upn": "user0250@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0251",
+   "upn": "user0251@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0252",
+   "upn": "user0252@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0253",
+   "upn": "user0253@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0254",
+   "upn": "user0254@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0255",
+   "upn": "user0255@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0256",
+   "upn": "user0256@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0257",
+   "upn": "user0257@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0258",
+   "upn": "user0258@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0259",
+   "upn": "user0259@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0260",
+   "upn": "user0260@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0261",
+   "upn": "user0261@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0262",
+   "upn": "user0262@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0263",
+   "upn": "user0263@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0264",
+   "upn": "user0264@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0265",
+   "upn": "user0265@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0266",
+   "upn": "user0266@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0267",
+   "upn": "user0267@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0268",
+   "upn": "user0268@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0269",
+   "upn": "user0269@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0270",
+   "upn": "user0270@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0271",
+   "upn": "user0271@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0272",
+   "upn": "user0272@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0273",
+   "upn": "user0273@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0274",
+   "upn": "user0274@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0275",
+   "upn": "user0275@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0276",
+   "upn": "user0276@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0277",
+   "upn": "user0277@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0278",
+   "upn": "user0278@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0279",
+   "upn": "user0279@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0280",
+   "upn": "user0280@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0281",
+   "upn": "user0281@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0282",
+   "upn": "user0282@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0283",
+   "upn": "user0283@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0284",
+   "upn": "user0284@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0285",
+   "upn": "user0285@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0286",
+   "upn": "user0286@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0287",
+   "upn": "user0287@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0288",
+   "upn": "user0288@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0289",
+   "upn": "user0289@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0290",
+   "upn": "user0290@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0291",
+   "upn": "user0291@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0292",
+   "upn": "user0292@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0293",
+   "upn": "user0293@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0294",
+   "upn": "user0294@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0295",
+   "upn": "user0295@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0296",
+   "upn": "user0296@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0297",
+   "upn": "user0297@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0298",
+   "upn": "user0298@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0299",
+   "upn": "user0299@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0300",
+   "upn": "user0300@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0301",
+   "upn": "user0301@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0302",
+   "upn": "user0302@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0303",
+   "upn": "user0303@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0304",
+   "upn": "user0304@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0305",
+   "upn": "user0305@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0306",
+   "upn": "user0306@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0307",
+   "upn": "user0307@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0308",
+   "upn": "user0308@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0309",
+   "upn": "user0309@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0310",
+   "upn": "user0310@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0311",
+   "upn": "user0311@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0312",
+   "upn": "user0312@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0313",
+   "upn": "user0313@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0314",
+   "upn": "user0314@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0315",
+   "upn": "user0315@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0316",
+   "upn": "user0316@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0317",
+   "upn": "user0317@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0318",
+   "upn": "user0318@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0319",
+   "upn": "user0319@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0320",
+   "upn": "user0320@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0321",
+   "upn": "user0321@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0322",
+   "upn": "user0322@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0323",
+   "upn": "user0323@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0324",
+   "upn": "user0324@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0325",
+   "upn": "user0325@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0326",
+   "upn": "user0326@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0327",
+   "upn": "user0327@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0328",
+   "upn": "user0328@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0329",
+   "upn": "user0329@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0330",
+   "upn": "user0330@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0331",
+   "upn": "user0331@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0332",
+   "upn": "user0332@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0333",
+   "upn": "user0333@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0334",
+   "upn": "user0334@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0335",
+   "upn": "user0335@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0336",
+   "upn": "user0336@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0337",
+   "upn": "user0337@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0338",
+   "upn": "user0338@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0339",
+   "upn": "user0339@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0340",
+   "upn": "user0340@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0341",
+   "upn": "user0341@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0342",
+   "upn": "user0342@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0343",
+   "upn": "user0343@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0344",
+   "upn": "user0344@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0345",
+   "upn": "user0345@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0346",
+   "upn": "user0346@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0347",
+   "upn": "user0347@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0348",
+   "upn": "user0348@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0349",
+   "upn": "user0349@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0350",
+   "upn": "user0350@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0351",
+   "upn": "user0351@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0352",
+   "upn": "user0352@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0353",
+   "upn": "user0353@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0354",
+   "upn": "user0354@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0355",
+   "upn": "user0355@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0356",
+   "upn": "user0356@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0357",
+   "upn": "user0357@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0358",
+   "upn": "user0358@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0359",
+   "upn": "user0359@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0360",
+   "upn": "user0360@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0361",
+   "upn": "user0361@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0362",
+   "upn": "user0362@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0363",
+   "upn": "user0363@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0364",
+   "upn": "user0364@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0365",
+   "upn": "user0365@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0366",
+   "upn": "user0366@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0367",
+   "upn": "user0367@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0368",
+   "upn": "user0368@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0369",
+   "upn": "user0369@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0370",
+   "upn": "user0370@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0371",
+   "upn": "user0371@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0372",
+   "upn": "user0372@contoso.example",
+   "enabled": true,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-02-01T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0373",
+   "upn": "user0373@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0374",
+   "upn": "user0374@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0375",
+   "upn": "user0375@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0376",
+   "upn": "user0376@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0377",
+   "upn": "user0377@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0378",
+   "upn": "user0378@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0379",
+   "upn": "user0379@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0380",
+   "upn": "user0380@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0381",
+   "upn": "user0381@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0382",
+   "upn": "user0382@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0383",
+   "upn": "user0383@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  },
+  {
+   "id": "user-0384",
+   "upn": "user0384@contoso.example",
+   "enabled": false,
+   "type": "Member",
+   "created": "2023-05-01T00:00:00Z",
+   "last_sign_in": "2026-09-29T08:00:00Z",
+   "sku_ids": [
+    "sku-e3"
+   ]
+  }
+ ],
+ "sign_in_activity_available": true,
+ "errors": {}
+}

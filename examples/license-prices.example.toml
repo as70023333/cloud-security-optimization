@@ -1,0 +1,11 @@
+# Your price per user per month, by product part number. These numbers are placeholders:
+# replace them with the prices in your own Microsoft agreement.
+# Find part numbers with: secopt licenses  (the "part_number" column in the products CSV)
+currency = "USD"
+
+[prices]
+SPE_E5 = 57.00
+SPE_E3 = 36.00
+AAD_PREMIUM_P2 = 9.00
+WIN_DEF_ATP = 5.20
+THREAT_INTELLIGENCE = 5.00

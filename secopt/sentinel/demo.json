@@ -1,0 +1,2710 @@
+{
+ "kind": "sentinel",
+ "captured_at": "2026-10-01T12:00:00Z",
+ "days": 30,
+ "workspace": {
+  "id": "/subscriptions/aaaaaaaa-0000-4000-8000-000000000001/resourceGroups/rg-sentinel/providers/Microsoft.OperationalInsights/workspaces/contoso-sentinel",
+  "name": "contoso-sentinel (demo)",
+  "location": "eastus",
+  "customer_id": "bbbbbbbb-0000-4000-8000-000000000001",
+  "sku": "PerGB2018",
+  "capacity_reservation_gb": null,
+  "retention_days": 90,
+  "daily_cap_gb": null
+ },
+ "usage": [
+  {
+   "date": "2026-09-01",
+   "table": "SecurityEvent",
+   "billable_gb": 38.38,
+   "total_gb": 38.38
+  },
+  {
+   "date": "2026-09-01",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.0,
+   "total_gb": 32.0
+  },
+  {
+   "date": "2026-09-01",
+   "table": "Syslog",
+   "billable_gb": 13.86,
+   "total_gb": 13.86
+  },
+  {
+   "date": "2026-09-01",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.88,
+   "total_gb": 11.88
+  },
+  {
+   "date": "2026-09-01",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.18,
+   "total_gb": 9.18
+  },
+  {
+   "date": "2026-09-01",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.16,
+   "total_gb": 8.16
+  },
+  {
+   "date": "2026-09-01",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.96,
+   "total_gb": 3.96
+  },
+  {
+   "date": "2026-09-01",
+   "table": "SigninLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-01",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-01",
+   "table": "AuditLogs",
+   "billable_gb": 1.02,
+   "total_gb": 1.02
+  },
+  {
+   "date": "2026-09-01",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.297,
+   "total_gb": 0.297
+  },
+  {
+   "date": "2026-09-01",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.1
+  },
+  {
+   "date": "2026-09-01",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.02
+  },
+  {
+   "date": "2026-09-01",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.202
+  },
+  {
+   "date": "2026-09-02",
+   "table": "SecurityEvent",
+   "billable_gb": 37.24,
+   "total_gb": 37.24
+  },
+  {
+   "date": "2026-09-02",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.64,
+   "total_gb": 32.64
+  },
+  {
+   "date": "2026-09-02",
+   "table": "Syslog",
+   "billable_gb": 14.14,
+   "total_gb": 14.14
+  },
+  {
+   "date": "2026-09-02",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.12,
+   "total_gb": 12.12
+  },
+  {
+   "date": "2026-09-02",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.91,
+   "total_gb": 8.91
+  },
+  {
+   "date": "2026-09-02",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.92,
+   "total_gb": 7.92
+  },
+  {
+   "date": "2026-09-02",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.04,
+   "total_gb": 4.04
+  },
+  {
+   "date": "2026-09-02",
+   "table": "SigninLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-02",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-02",
+   "table": "AuditLogs",
+   "billable_gb": 0.99,
+   "total_gb": 0.99
+  },
+  {
+   "date": "2026-09-02",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.303,
+   "total_gb": 0.303
+  },
+  {
+   "date": "2026-09-02",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.95
+  },
+  {
+   "date": "2026-09-02",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.96
+  },
+  {
+   "date": "2026-09-02",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.196
+  },
+  {
+   "date": "2026-09-03",
+   "table": "SecurityEvent",
+   "billable_gb": 38.0,
+   "total_gb": 38.0
+  },
+  {
+   "date": "2026-09-03",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.68,
+   "total_gb": 31.68
+  },
+  {
+   "date": "2026-09-03",
+   "table": "Syslog",
+   "billable_gb": 13.72,
+   "total_gb": 13.72
+  },
+  {
+   "date": "2026-09-03",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.76,
+   "total_gb": 11.76
+  },
+  {
+   "date": "2026-09-03",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.09,
+   "total_gb": 9.09
+  },
+  {
+   "date": "2026-09-03",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.08,
+   "total_gb": 8.08
+  },
+  {
+   "date": "2026-09-03",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.92,
+   "total_gb": 3.92
+  },
+  {
+   "date": "2026-09-03",
+   "table": "SigninLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-03",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-03",
+   "table": "AuditLogs",
+   "billable_gb": 1.01,
+   "total_gb": 1.01
+  },
+  {
+   "date": "2026-09-03",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.294,
+   "total_gb": 0.294
+  },
+  {
+   "date": "2026-09-03",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.05
+  },
+  {
+   "date": "2026-09-03",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.0
+  },
+  {
+   "date": "2026-09-03",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.2
+  },
+  {
+   "date": "2026-09-04",
+   "table": "SecurityEvent",
+   "billable_gb": 38.76,
+   "total_gb": 38.76
+  },
+  {
+   "date": "2026-09-04",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.32,
+   "total_gb": 32.32
+  },
+  {
+   "date": "2026-09-04",
+   "table": "Syslog",
+   "billable_gb": 14.0,
+   "total_gb": 14.0
+  },
+  {
+   "date": "2026-09-04",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.0,
+   "total_gb": 12.0
+  },
+  {
+   "date": "2026-09-04",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.82,
+   "total_gb": 8.82
+  },
+  {
+   "date": "2026-09-04",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.84,
+   "total_gb": 7.84
+  },
+  {
+   "date": "2026-09-04",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.0,
+   "total_gb": 4.0
+  },
+  {
+   "date": "2026-09-04",
+   "table": "SigninLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-04",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-04",
+   "table": "AuditLogs",
+   "billable_gb": 0.98,
+   "total_gb": 0.98
+  },
+  {
+   "date": "2026-09-04",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.3,
+   "total_gb": 0.3
+  },
+  {
+   "date": "2026-09-04",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.9
+  },
+  {
+   "date": "2026-09-04",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.04
+  },
+  {
+   "date": "2026-09-04",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.204
+  },
+  {
+   "date": "2026-09-05",
+   "table": "SecurityEvent",
+   "billable_gb": 28.215,
+   "total_gb": 28.215
+  },
+  {
+   "date": "2026-09-05",
+   "table": "CommonSecurityLog",
+   "billable_gb": 28.224,
+   "total_gb": 28.224
+  },
+  {
+   "date": "2026-09-05",
+   "table": "Syslog",
+   "billable_gb": 12.852,
+   "total_gb": 12.852
+  },
+  {
+   "date": "2026-09-05",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.344,
+   "total_gb": 7.344
+  },
+  {
+   "date": "2026-09-05",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.5,
+   "total_gb": 4.5
+  },
+  {
+   "date": "2026-09-05",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 4.0,
+   "total_gb": 4.0
+  },
+  {
+   "date": "2026-09-05",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.08,
+   "total_gb": 4.08
+  },
+  {
+   "date": "2026-09-05",
+   "table": "SigninLogs",
+   "billable_gb": 1.515,
+   "total_gb": 1.515
+  },
+  {
+   "date": "2026-09-05",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-05",
+   "table": "AuditLogs",
+   "billable_gb": 0.6,
+   "total_gb": 0.6
+  },
+  {
+   "date": "2026-09-05",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.306,
+   "total_gb": 0.306
+  },
+  {
+   "date": "2026-09-05",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.0
+  },
+  {
+   "date": "2026-09-05",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.584
+  },
+  {
+   "date": "2026-09-05",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.158
+  },
+  {
+   "date": "2026-09-06",
+   "table": "SecurityEvent",
+   "billable_gb": 28.785,
+   "total_gb": 28.785
+  },
+  {
+   "date": "2026-09-06",
+   "table": "CommonSecurityLog",
+   "billable_gb": 28.8,
+   "total_gb": 28.8
+  },
+  {
+   "date": "2026-09-06",
+   "table": "Syslog",
+   "billable_gb": 12.474,
+   "total_gb": 12.474
+  },
+  {
+   "date": "2026-09-06",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.128,
+   "total_gb": 7.128
+  },
+  {
+   "date": "2026-09-06",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.59,
+   "total_gb": 4.59
+  },
+  {
+   "date": "2026-09-06",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 4.08,
+   "total_gb": 4.08
+  },
+  {
+   "date": "2026-09-06",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.96,
+   "total_gb": 3.96
+  },
+  {
+   "date": "2026-09-06",
+   "table": "SigninLogs",
+   "billable_gb": 1.47,
+   "total_gb": 1.47
+  },
+  {
+   "date": "2026-09-06",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-06",
+   "table": "AuditLogs",
+   "billable_gb": 0.612,
+   "total_gb": 0.612
+  },
+  {
+   "date": "2026-09-06",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.297,
+   "total_gb": 0.297
+  },
+  {
+   "date": "2026-09-06",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.04
+  },
+  {
+   "date": "2026-09-06",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.616
+  },
+  {
+   "date": "2026-09-06",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.162
+  },
+  {
+   "date": "2026-09-07",
+   "table": "SecurityEvent",
+   "billable_gb": 37.24,
+   "total_gb": 37.24
+  },
+  {
+   "date": "2026-09-07",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.64,
+   "total_gb": 32.64
+  },
+  {
+   "date": "2026-09-07",
+   "table": "Syslog",
+   "billable_gb": 14.14,
+   "total_gb": 14.14
+  },
+  {
+   "date": "2026-09-07",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.12,
+   "total_gb": 12.12
+  },
+  {
+   "date": "2026-09-07",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.91,
+   "total_gb": 8.91
+  },
+  {
+   "date": "2026-09-07",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.92,
+   "total_gb": 7.92
+  },
+  {
+   "date": "2026-09-07",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.04,
+   "total_gb": 4.04
+  },
+  {
+   "date": "2026-09-07",
+   "table": "SigninLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-07",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-07",
+   "table": "AuditLogs",
+   "billable_gb": 0.99,
+   "total_gb": 0.99
+  },
+  {
+   "date": "2026-09-07",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.303,
+   "total_gb": 0.303
+  },
+  {
+   "date": "2026-09-07",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.95
+  },
+  {
+   "date": "2026-09-07",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.96
+  },
+  {
+   "date": "2026-09-07",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.196
+  },
+  {
+   "date": "2026-09-08",
+   "table": "SecurityEvent",
+   "billable_gb": 38.0,
+   "total_gb": 38.0
+  },
+  {
+   "date": "2026-09-08",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.68,
+   "total_gb": 31.68
+  },
+  {
+   "date": "2026-09-08",
+   "table": "Syslog",
+   "billable_gb": 13.72,
+   "total_gb": 13.72
+  },
+  {
+   "date": "2026-09-08",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.76,
+   "total_gb": 11.76
+  },
+  {
+   "date": "2026-09-08",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.09,
+   "total_gb": 9.09
+  },
+  {
+   "date": "2026-09-08",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.08,
+   "total_gb": 8.08
+  },
+  {
+   "date": "2026-09-08",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.92,
+   "total_gb": 3.92
+  },
+  {
+   "date": "2026-09-08",
+   "table": "SigninLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-08",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-08",
+   "table": "AuditLogs",
+   "billable_gb": 1.01,
+   "total_gb": 1.01
+  },
+  {
+   "date": "2026-09-08",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.294,
+   "total_gb": 0.294
+  },
+  {
+   "date": "2026-09-08",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.05
+  },
+  {
+   "date": "2026-09-08",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.0
+  },
+  {
+   "date": "2026-09-08",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.2
+  },
+  {
+   "date": "2026-09-09",
+   "table": "SecurityEvent",
+   "billable_gb": 38.76,
+   "total_gb": 38.76
+  },
+  {
+   "date": "2026-09-09",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.32,
+   "total_gb": 32.32
+  },
+  {
+   "date": "2026-09-09",
+   "table": "Syslog",
+   "billable_gb": 14.0,
+   "total_gb": 14.0
+  },
+  {
+   "date": "2026-09-09",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.0,
+   "total_gb": 12.0
+  },
+  {
+   "date": "2026-09-09",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.82,
+   "total_gb": 8.82
+  },
+  {
+   "date": "2026-09-09",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.84,
+   "total_gb": 7.84
+  },
+  {
+   "date": "2026-09-09",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.0,
+   "total_gb": 4.0
+  },
+  {
+   "date": "2026-09-09",
+   "table": "SigninLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-09",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-09",
+   "table": "AuditLogs",
+   "billable_gb": 0.98,
+   "total_gb": 0.98
+  },
+  {
+   "date": "2026-09-09",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.3,
+   "total_gb": 0.3
+  },
+  {
+   "date": "2026-09-09",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.9
+  },
+  {
+   "date": "2026-09-09",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.04
+  },
+  {
+   "date": "2026-09-09",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.204
+  },
+  {
+   "date": "2026-09-10",
+   "table": "SecurityEvent",
+   "billable_gb": 37.62,
+   "total_gb": 37.62
+  },
+  {
+   "date": "2026-09-10",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.36,
+   "total_gb": 31.36
+  },
+  {
+   "date": "2026-09-10",
+   "table": "Syslog",
+   "billable_gb": 14.28,
+   "total_gb": 14.28
+  },
+  {
+   "date": "2026-09-10",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.24,
+   "total_gb": 12.24
+  },
+  {
+   "date": "2026-09-10",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.0,
+   "total_gb": 9.0
+  },
+  {
+   "date": "2026-09-10",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.0,
+   "total_gb": 8.0
+  },
+  {
+   "date": "2026-09-10",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.08,
+   "total_gb": 4.08
+  },
+  {
+   "date": "2026-09-10",
+   "table": "SigninLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-10",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-10",
+   "table": "AuditLogs",
+   "billable_gb": 1.0,
+   "total_gb": 1.0
+  },
+  {
+   "date": "2026-09-10",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.306,
+   "total_gb": 0.306
+  },
+  {
+   "date": "2026-09-10",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.0
+  },
+  {
+   "date": "2026-09-10",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.98
+  },
+  {
+   "date": "2026-09-10",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.198
+  },
+  {
+   "date": "2026-09-11",
+   "table": "SecurityEvent",
+   "billable_gb": 38.38,
+   "total_gb": 38.38
+  },
+  {
+   "date": "2026-09-11",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.0,
+   "total_gb": 32.0
+  },
+  {
+   "date": "2026-09-11",
+   "table": "Syslog",
+   "billable_gb": 13.86,
+   "total_gb": 13.86
+  },
+  {
+   "date": "2026-09-11",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.88,
+   "total_gb": 11.88
+  },
+  {
+   "date": "2026-09-11",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.18,
+   "total_gb": 9.18
+  },
+  {
+   "date": "2026-09-11",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.16,
+   "total_gb": 8.16
+  },
+  {
+   "date": "2026-09-11",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.96,
+   "total_gb": 3.96
+  },
+  {
+   "date": "2026-09-11",
+   "table": "SigninLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-11",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-11",
+   "table": "AuditLogs",
+   "billable_gb": 1.02,
+   "total_gb": 1.02
+  },
+  {
+   "date": "2026-09-11",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.297,
+   "total_gb": 0.297
+  },
+  {
+   "date": "2026-09-11",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.1
+  },
+  {
+   "date": "2026-09-11",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.02
+  },
+  {
+   "date": "2026-09-11",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.202
+  },
+  {
+   "date": "2026-09-12",
+   "table": "SecurityEvent",
+   "billable_gb": 27.93,
+   "total_gb": 27.93
+  },
+  {
+   "date": "2026-09-12",
+   "table": "CommonSecurityLog",
+   "billable_gb": 29.376,
+   "total_gb": 29.376
+  },
+  {
+   "date": "2026-09-12",
+   "table": "Syslog",
+   "billable_gb": 12.726,
+   "total_gb": 12.726
+  },
+  {
+   "date": "2026-09-12",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.272,
+   "total_gb": 7.272
+  },
+  {
+   "date": "2026-09-12",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.455,
+   "total_gb": 4.455
+  },
+  {
+   "date": "2026-09-12",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 3.96,
+   "total_gb": 3.96
+  },
+  {
+   "date": "2026-09-12",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.04,
+   "total_gb": 4.04
+  },
+  {
+   "date": "2026-09-12",
+   "table": "SigninLogs",
+   "billable_gb": 1.5,
+   "total_gb": 1.5
+  },
+  {
+   "date": "2026-09-12",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-12",
+   "table": "AuditLogs",
+   "billable_gb": 0.594,
+   "total_gb": 0.594
+  },
+  {
+   "date": "2026-09-12",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.303,
+   "total_gb": 0.303
+  },
+  {
+   "date": "2026-09-12",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.98
+  },
+  {
+   "date": "2026-09-12",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.568
+  },
+  {
+   "date": "2026-09-12",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.157
+  },
+  {
+   "date": "2026-09-13",
+   "table": "SecurityEvent",
+   "billable_gb": 28.5,
+   "total_gb": 28.5
+  },
+  {
+   "date": "2026-09-13",
+   "table": "CommonSecurityLog",
+   "billable_gb": 28.512,
+   "total_gb": 28.512
+  },
+  {
+   "date": "2026-09-13",
+   "table": "Syslog",
+   "billable_gb": 12.348,
+   "total_gb": 12.348
+  },
+  {
+   "date": "2026-09-13",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.056,
+   "total_gb": 7.056
+  },
+  {
+   "date": "2026-09-13",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.545,
+   "total_gb": 4.545
+  },
+  {
+   "date": "2026-09-13",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 4.04,
+   "total_gb": 4.04
+  },
+  {
+   "date": "2026-09-13",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.92,
+   "total_gb": 3.92
+  },
+  {
+   "date": "2026-09-13",
+   "table": "SigninLogs",
+   "billable_gb": 1.53,
+   "total_gb": 1.53
+  },
+  {
+   "date": "2026-09-13",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-13",
+   "table": "AuditLogs",
+   "billable_gb": 0.606,
+   "total_gb": 0.606
+  },
+  {
+   "date": "2026-09-13",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.294,
+   "total_gb": 0.294
+  },
+  {
+   "date": "2026-09-13",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.02
+  },
+  {
+   "date": "2026-09-13",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.6
+  },
+  {
+   "date": "2026-09-13",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.16
+  },
+  {
+   "date": "2026-09-14",
+   "table": "SecurityEvent",
+   "billable_gb": 38.76,
+   "total_gb": 38.76
+  },
+  {
+   "date": "2026-09-14",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.32,
+   "total_gb": 32.32
+  },
+  {
+   "date": "2026-09-14",
+   "table": "Syslog",
+   "billable_gb": 14.0,
+   "total_gb": 14.0
+  },
+  {
+   "date": "2026-09-14",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.0,
+   "total_gb": 12.0
+  },
+  {
+   "date": "2026-09-14",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.82,
+   "total_gb": 8.82
+  },
+  {
+   "date": "2026-09-14",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.84,
+   "total_gb": 7.84
+  },
+  {
+   "date": "2026-09-14",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.0,
+   "total_gb": 4.0
+  },
+  {
+   "date": "2026-09-14",
+   "table": "SigninLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-14",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-14",
+   "table": "AuditLogs",
+   "billable_gb": 0.98,
+   "total_gb": 0.98
+  },
+  {
+   "date": "2026-09-14",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.3,
+   "total_gb": 0.3
+  },
+  {
+   "date": "2026-09-14",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.9
+  },
+  {
+   "date": "2026-09-14",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.04
+  },
+  {
+   "date": "2026-09-14",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.204
+  },
+  {
+   "date": "2026-09-15",
+   "table": "SecurityEvent",
+   "billable_gb": 37.62,
+   "total_gb": 37.62
+  },
+  {
+   "date": "2026-09-15",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.36,
+   "total_gb": 31.36
+  },
+  {
+   "date": "2026-09-15",
+   "table": "Syslog",
+   "billable_gb": 14.28,
+   "total_gb": 14.28
+  },
+  {
+   "date": "2026-09-15",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.24,
+   "total_gb": 12.24
+  },
+  {
+   "date": "2026-09-15",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.0,
+   "total_gb": 9.0
+  },
+  {
+   "date": "2026-09-15",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.0,
+   "total_gb": 8.0
+  },
+  {
+   "date": "2026-09-15",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.08,
+   "total_gb": 4.08
+  },
+  {
+   "date": "2026-09-15",
+   "table": "SigninLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-15",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-15",
+   "table": "AuditLogs",
+   "billable_gb": 1.0,
+   "total_gb": 1.0
+  },
+  {
+   "date": "2026-09-15",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.306,
+   "total_gb": 0.306
+  },
+  {
+   "date": "2026-09-15",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.0
+  },
+  {
+   "date": "2026-09-15",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.98
+  },
+  {
+   "date": "2026-09-15",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.198
+  },
+  {
+   "date": "2026-09-16",
+   "table": "SecurityEvent",
+   "billable_gb": 38.38,
+   "total_gb": 38.38
+  },
+  {
+   "date": "2026-09-16",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.0,
+   "total_gb": 32.0
+  },
+  {
+   "date": "2026-09-16",
+   "table": "Syslog",
+   "billable_gb": 13.86,
+   "total_gb": 13.86
+  },
+  {
+   "date": "2026-09-16",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.88,
+   "total_gb": 11.88
+  },
+  {
+   "date": "2026-09-16",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.18,
+   "total_gb": 9.18
+  },
+  {
+   "date": "2026-09-16",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.16,
+   "total_gb": 8.16
+  },
+  {
+   "date": "2026-09-16",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.96,
+   "total_gb": 3.96
+  },
+  {
+   "date": "2026-09-16",
+   "table": "SigninLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-16",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-16",
+   "table": "AuditLogs",
+   "billable_gb": 1.02,
+   "total_gb": 1.02
+  },
+  {
+   "date": "2026-09-16",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.297,
+   "total_gb": 0.297
+  },
+  {
+   "date": "2026-09-16",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.1
+  },
+  {
+   "date": "2026-09-16",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.02
+  },
+  {
+   "date": "2026-09-16",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.202
+  },
+  {
+   "date": "2026-09-17",
+   "table": "SecurityEvent",
+   "billable_gb": 37.24,
+   "total_gb": 37.24
+  },
+  {
+   "date": "2026-09-17",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.64,
+   "total_gb": 32.64
+  },
+  {
+   "date": "2026-09-17",
+   "table": "Syslog",
+   "billable_gb": 14.14,
+   "total_gb": 14.14
+  },
+  {
+   "date": "2026-09-17",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.12,
+   "total_gb": 12.12
+  },
+  {
+   "date": "2026-09-17",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.91,
+   "total_gb": 8.91
+  },
+  {
+   "date": "2026-09-17",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.92,
+   "total_gb": 7.92
+  },
+  {
+   "date": "2026-09-17",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.04,
+   "total_gb": 4.04
+  },
+  {
+   "date": "2026-09-17",
+   "table": "SigninLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-17",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-17",
+   "table": "AuditLogs",
+   "billable_gb": 0.99,
+   "total_gb": 0.99
+  },
+  {
+   "date": "2026-09-17",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.303,
+   "total_gb": 0.303
+  },
+  {
+   "date": "2026-09-17",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.95
+  },
+  {
+   "date": "2026-09-17",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.96
+  },
+  {
+   "date": "2026-09-17",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.196
+  },
+  {
+   "date": "2026-09-18",
+   "table": "SecurityEvent",
+   "billable_gb": 38.0,
+   "total_gb": 38.0
+  },
+  {
+   "date": "2026-09-18",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.68,
+   "total_gb": 31.68
+  },
+  {
+   "date": "2026-09-18",
+   "table": "Syslog",
+   "billable_gb": 13.72,
+   "total_gb": 13.72
+  },
+  {
+   "date": "2026-09-18",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.76,
+   "total_gb": 11.76
+  },
+  {
+   "date": "2026-09-18",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.09,
+   "total_gb": 9.09
+  },
+  {
+   "date": "2026-09-18",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.08,
+   "total_gb": 8.08
+  },
+  {
+   "date": "2026-09-18",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.92,
+   "total_gb": 3.92
+  },
+  {
+   "date": "2026-09-18",
+   "table": "SigninLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-18",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-18",
+   "table": "AuditLogs",
+   "billable_gb": 1.01,
+   "total_gb": 1.01
+  },
+  {
+   "date": "2026-09-18",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.294,
+   "total_gb": 0.294
+  },
+  {
+   "date": "2026-09-18",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.05
+  },
+  {
+   "date": "2026-09-18",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.0
+  },
+  {
+   "date": "2026-09-18",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.2
+  },
+  {
+   "date": "2026-09-19",
+   "table": "SecurityEvent",
+   "billable_gb": 29.07,
+   "total_gb": 29.07
+  },
+  {
+   "date": "2026-09-19",
+   "table": "CommonSecurityLog",
+   "billable_gb": 29.088,
+   "total_gb": 29.088
+  },
+  {
+   "date": "2026-09-19",
+   "table": "Syslog",
+   "billable_gb": 12.6,
+   "total_gb": 12.6
+  },
+  {
+   "date": "2026-09-19",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.2,
+   "total_gb": 7.2
+  },
+  {
+   "date": "2026-09-19",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.41,
+   "total_gb": 4.41
+  },
+  {
+   "date": "2026-09-19",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 3.92,
+   "total_gb": 3.92
+  },
+  {
+   "date": "2026-09-19",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.0,
+   "total_gb": 4.0
+  },
+  {
+   "date": "2026-09-19",
+   "table": "SigninLogs",
+   "billable_gb": 1.485,
+   "total_gb": 1.485
+  },
+  {
+   "date": "2026-09-19",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-19",
+   "table": "AuditLogs",
+   "billable_gb": 0.588,
+   "total_gb": 0.588
+  },
+  {
+   "date": "2026-09-19",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.3,
+   "total_gb": 0.3
+  },
+  {
+   "date": "2026-09-19",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.96
+  },
+  {
+   "date": "2026-09-19",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.632
+  },
+  {
+   "date": "2026-09-19",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.163
+  },
+  {
+   "date": "2026-09-20",
+   "table": "SecurityEvent",
+   "billable_gb": 28.215,
+   "total_gb": 28.215
+  },
+  {
+   "date": "2026-09-20",
+   "table": "CommonSecurityLog",
+   "billable_gb": 28.224,
+   "total_gb": 28.224
+  },
+  {
+   "date": "2026-09-20",
+   "table": "Syslog",
+   "billable_gb": 12.852,
+   "total_gb": 12.852
+  },
+  {
+   "date": "2026-09-20",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.344,
+   "total_gb": 7.344
+  },
+  {
+   "date": "2026-09-20",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.5,
+   "total_gb": 4.5
+  },
+  {
+   "date": "2026-09-20",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 4.0,
+   "total_gb": 4.0
+  },
+  {
+   "date": "2026-09-20",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.08,
+   "total_gb": 4.08
+  },
+  {
+   "date": "2026-09-20",
+   "table": "SigninLogs",
+   "billable_gb": 1.515,
+   "total_gb": 1.515
+  },
+  {
+   "date": "2026-09-20",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-20",
+   "table": "AuditLogs",
+   "billable_gb": 0.6,
+   "total_gb": 0.6
+  },
+  {
+   "date": "2026-09-20",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.306,
+   "total_gb": 0.306
+  },
+  {
+   "date": "2026-09-20",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.0
+  },
+  {
+   "date": "2026-09-20",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.584
+  },
+  {
+   "date": "2026-09-20",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.158
+  },
+  {
+   "date": "2026-09-21",
+   "table": "SecurityEvent",
+   "billable_gb": 38.38,
+   "total_gb": 38.38
+  },
+  {
+   "date": "2026-09-21",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.0,
+   "total_gb": 32.0
+  },
+  {
+   "date": "2026-09-21",
+   "table": "Syslog",
+   "billable_gb": 13.86,
+   "total_gb": 13.86
+  },
+  {
+   "date": "2026-09-21",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.88,
+   "total_gb": 11.88
+  },
+  {
+   "date": "2026-09-21",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.18,
+   "total_gb": 9.18
+  },
+  {
+   "date": "2026-09-21",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.16,
+   "total_gb": 8.16
+  },
+  {
+   "date": "2026-09-21",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.96,
+   "total_gb": 3.96
+  },
+  {
+   "date": "2026-09-21",
+   "table": "SigninLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-21",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-21",
+   "table": "AuditLogs",
+   "billable_gb": 1.02,
+   "total_gb": 1.02
+  },
+  {
+   "date": "2026-09-21",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.297,
+   "total_gb": 0.297
+  },
+  {
+   "date": "2026-09-21",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.1
+  },
+  {
+   "date": "2026-09-21",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.02
+  },
+  {
+   "date": "2026-09-21",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.202
+  },
+  {
+   "date": "2026-09-22",
+   "table": "SecurityEvent",
+   "billable_gb": 37.24,
+   "total_gb": 37.24
+  },
+  {
+   "date": "2026-09-22",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.64,
+   "total_gb": 32.64
+  },
+  {
+   "date": "2026-09-22",
+   "table": "Syslog",
+   "billable_gb": 14.14,
+   "total_gb": 14.14
+  },
+  {
+   "date": "2026-09-22",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.12,
+   "total_gb": 12.12
+  },
+  {
+   "date": "2026-09-22",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.91,
+   "total_gb": 8.91
+  },
+  {
+   "date": "2026-09-22",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.92,
+   "total_gb": 7.92
+  },
+  {
+   "date": "2026-09-22",
+   "table": "AzureDiagnostics",
+   "billable_gb": 4.04,
+   "total_gb": 4.04
+  },
+  {
+   "date": "2026-09-22",
+   "table": "SigninLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-22",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-22",
+   "table": "AuditLogs",
+   "billable_gb": 0.99,
+   "total_gb": 0.99
+  },
+  {
+   "date": "2026-09-22",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.303,
+   "total_gb": 0.303
+  },
+  {
+   "date": "2026-09-22",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.95
+  },
+  {
+   "date": "2026-09-22",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.96
+  },
+  {
+   "date": "2026-09-22",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.196
+  },
+  {
+   "date": "2026-09-23",
+   "table": "SecurityEvent",
+   "billable_gb": 38.0,
+   "total_gb": 38.0
+  },
+  {
+   "date": "2026-09-23",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.68,
+   "total_gb": 31.68
+  },
+  {
+   "date": "2026-09-23",
+   "table": "Syslog",
+   "billable_gb": 13.72,
+   "total_gb": 13.72
+  },
+  {
+   "date": "2026-09-23",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.76,
+   "total_gb": 11.76
+  },
+  {
+   "date": "2026-09-23",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.09,
+   "total_gb": 9.09
+  },
+  {
+   "date": "2026-09-23",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.08,
+   "total_gb": 8.08
+  },
+  {
+   "date": "2026-09-23",
+   "table": "AzureDiagnostics",
+   "billable_gb": 3.92,
+   "total_gb": 3.92
+  },
+  {
+   "date": "2026-09-23",
+   "table": "SigninLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-23",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-23",
+   "table": "AuditLogs",
+   "billable_gb": 1.01,
+   "total_gb": 1.01
+  },
+  {
+   "date": "2026-09-23",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.294,
+   "total_gb": 0.294
+  },
+  {
+   "date": "2026-09-23",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.05
+  },
+  {
+   "date": "2026-09-23",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.0
+  },
+  {
+   "date": "2026-09-23",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.2
+  },
+  {
+   "date": "2026-09-24",
+   "table": "SecurityEvent",
+   "billable_gb": 38.76,
+   "total_gb": 38.76
+  },
+  {
+   "date": "2026-09-24",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.32,
+   "total_gb": 32.32
+  },
+  {
+   "date": "2026-09-24",
+   "table": "Syslog",
+   "billable_gb": 14.0,
+   "total_gb": 14.0
+  },
+  {
+   "date": "2026-09-24",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.0,
+   "total_gb": 12.0
+  },
+  {
+   "date": "2026-09-24",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.82,
+   "total_gb": 8.82
+  },
+  {
+   "date": "2026-09-24",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.84,
+   "total_gb": 7.84
+  },
+  {
+   "date": "2026-09-24",
+   "table": "AzureDiagnostics",
+   "billable_gb": 12.0,
+   "total_gb": 12.0
+  },
+  {
+   "date": "2026-09-24",
+   "table": "SigninLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-24",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-24",
+   "table": "AuditLogs",
+   "billable_gb": 0.98,
+   "total_gb": 0.98
+  },
+  {
+   "date": "2026-09-24",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.3,
+   "total_gb": 0.3
+  },
+  {
+   "date": "2026-09-24",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.9
+  },
+  {
+   "date": "2026-09-24",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.04
+  },
+  {
+   "date": "2026-09-24",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.204
+  },
+  {
+   "date": "2026-09-25",
+   "table": "SecurityEvent",
+   "billable_gb": 37.62,
+   "total_gb": 37.62
+  },
+  {
+   "date": "2026-09-25",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.36,
+   "total_gb": 31.36
+  },
+  {
+   "date": "2026-09-25",
+   "table": "Syslog",
+   "billable_gb": 14.28,
+   "total_gb": 14.28
+  },
+  {
+   "date": "2026-09-25",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.24,
+   "total_gb": 12.24
+  },
+  {
+   "date": "2026-09-25",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.0,
+   "total_gb": 9.0
+  },
+  {
+   "date": "2026-09-25",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.0,
+   "total_gb": 8.0
+  },
+  {
+   "date": "2026-09-25",
+   "table": "AzureDiagnostics",
+   "billable_gb": 12.24,
+   "total_gb": 12.24
+  },
+  {
+   "date": "2026-09-25",
+   "table": "SigninLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-25",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-25",
+   "table": "AuditLogs",
+   "billable_gb": 1.0,
+   "total_gb": 1.0
+  },
+  {
+   "date": "2026-09-25",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.306,
+   "total_gb": 0.306
+  },
+  {
+   "date": "2026-09-25",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.0
+  },
+  {
+   "date": "2026-09-25",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.98
+  },
+  {
+   "date": "2026-09-25",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.198
+  },
+  {
+   "date": "2026-09-26",
+   "table": "SecurityEvent",
+   "billable_gb": 28.785,
+   "total_gb": 28.785
+  },
+  {
+   "date": "2026-09-26",
+   "table": "CommonSecurityLog",
+   "billable_gb": 28.8,
+   "total_gb": 28.8
+  },
+  {
+   "date": "2026-09-26",
+   "table": "Syslog",
+   "billable_gb": 12.474,
+   "total_gb": 12.474
+  },
+  {
+   "date": "2026-09-26",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.128,
+   "total_gb": 7.128
+  },
+  {
+   "date": "2026-09-26",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.59,
+   "total_gb": 4.59
+  },
+  {
+   "date": "2026-09-26",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 4.08,
+   "total_gb": 4.08
+  },
+  {
+   "date": "2026-09-26",
+   "table": "AzureDiagnostics",
+   "billable_gb": 11.88,
+   "total_gb": 11.88
+  },
+  {
+   "date": "2026-09-26",
+   "table": "SigninLogs",
+   "billable_gb": 1.47,
+   "total_gb": 1.47
+  },
+  {
+   "date": "2026-09-26",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.94,
+   "total_gb": 2.94
+  },
+  {
+   "date": "2026-09-26",
+   "table": "AuditLogs",
+   "billable_gb": 0.612,
+   "total_gb": 0.612
+  },
+  {
+   "date": "2026-09-26",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.297,
+   "total_gb": 0.297
+  },
+  {
+   "date": "2026-09-26",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.04
+  },
+  {
+   "date": "2026-09-26",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.616
+  },
+  {
+   "date": "2026-09-26",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.162
+  },
+  {
+   "date": "2026-09-27",
+   "table": "SecurityEvent",
+   "billable_gb": 27.93,
+   "total_gb": 27.93
+  },
+  {
+   "date": "2026-09-27",
+   "table": "CommonSecurityLog",
+   "billable_gb": 29.376,
+   "total_gb": 29.376
+  },
+  {
+   "date": "2026-09-27",
+   "table": "Syslog",
+   "billable_gb": 12.726,
+   "total_gb": 12.726
+  },
+  {
+   "date": "2026-09-27",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 7.272,
+   "total_gb": 7.272
+  },
+  {
+   "date": "2026-09-27",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 4.455,
+   "total_gb": 4.455
+  },
+  {
+   "date": "2026-09-27",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 3.96,
+   "total_gb": 3.96
+  },
+  {
+   "date": "2026-09-27",
+   "table": "AzureDiagnostics",
+   "billable_gb": 12.12,
+   "total_gb": 12.12
+  },
+  {
+   "date": "2026-09-27",
+   "table": "SigninLogs",
+   "billable_gb": 1.5,
+   "total_gb": 1.5
+  },
+  {
+   "date": "2026-09-27",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.0,
+   "total_gb": 3.0
+  },
+  {
+   "date": "2026-09-27",
+   "table": "AuditLogs",
+   "billable_gb": 0.594,
+   "total_gb": 0.594
+  },
+  {
+   "date": "2026-09-27",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.303,
+   "total_gb": 0.303
+  },
+  {
+   "date": "2026-09-27",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.98
+  },
+  {
+   "date": "2026-09-27",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.568
+  },
+  {
+   "date": "2026-09-27",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.157
+  },
+  {
+   "date": "2026-09-28",
+   "table": "SecurityEvent",
+   "billable_gb": 38.0,
+   "total_gb": 38.0
+  },
+  {
+   "date": "2026-09-28",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.68,
+   "total_gb": 31.68
+  },
+  {
+   "date": "2026-09-28",
+   "table": "Syslog",
+   "billable_gb": 13.72,
+   "total_gb": 13.72
+  },
+  {
+   "date": "2026-09-28",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 11.76,
+   "total_gb": 11.76
+  },
+  {
+   "date": "2026-09-28",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.09,
+   "total_gb": 9.09
+  },
+  {
+   "date": "2026-09-28",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.08,
+   "total_gb": 8.08
+  },
+  {
+   "date": "2026-09-28",
+   "table": "AzureDiagnostics",
+   "billable_gb": 11.76,
+   "total_gb": 11.76
+  },
+  {
+   "date": "2026-09-28",
+   "table": "SigninLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-28",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.06,
+   "total_gb": 3.06
+  },
+  {
+   "date": "2026-09-28",
+   "table": "AuditLogs",
+   "billable_gb": 1.01,
+   "total_gb": 1.01
+  },
+  {
+   "date": "2026-09-28",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.294,
+   "total_gb": 0.294
+  },
+  {
+   "date": "2026-09-28",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.05
+  },
+  {
+   "date": "2026-09-28",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.0
+  },
+  {
+   "date": "2026-09-28",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.2
+  },
+  {
+   "date": "2026-09-29",
+   "table": "SecurityEvent",
+   "billable_gb": 38.76,
+   "total_gb": 38.76
+  },
+  {
+   "date": "2026-09-29",
+   "table": "CommonSecurityLog",
+   "billable_gb": 32.32,
+   "total_gb": 32.32
+  },
+  {
+   "date": "2026-09-29",
+   "table": "Syslog",
+   "billable_gb": 14.0,
+   "total_gb": 14.0
+  },
+  {
+   "date": "2026-09-29",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.0,
+   "total_gb": 12.0
+  },
+  {
+   "date": "2026-09-29",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 8.82,
+   "total_gb": 8.82
+  },
+  {
+   "date": "2026-09-29",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 7.84,
+   "total_gb": 7.84
+  },
+  {
+   "date": "2026-09-29",
+   "table": "AzureDiagnostics",
+   "billable_gb": 12.0,
+   "total_gb": 12.0
+  },
+  {
+   "date": "2026-09-29",
+   "table": "SigninLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-29",
+   "table": "StorageBlobLogs",
+   "billable_gb": 2.97,
+   "total_gb": 2.97
+  },
+  {
+   "date": "2026-09-29",
+   "table": "AuditLogs",
+   "billable_gb": 0.98,
+   "total_gb": 0.98
+  },
+  {
+   "date": "2026-09-29",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.3,
+   "total_gb": 0.3
+  },
+  {
+   "date": "2026-09-29",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 4.9
+  },
+  {
+   "date": "2026-09-29",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 2.04
+  },
+  {
+   "date": "2026-09-29",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.204
+  },
+  {
+   "date": "2026-09-30",
+   "table": "SecurityEvent",
+   "billable_gb": 37.62,
+   "total_gb": 37.62
+  },
+  {
+   "date": "2026-09-30",
+   "table": "CommonSecurityLog",
+   "billable_gb": 31.36,
+   "total_gb": 31.36
+  },
+  {
+   "date": "2026-09-30",
+   "table": "Syslog",
+   "billable_gb": 14.28,
+   "total_gb": 14.28
+  },
+  {
+   "date": "2026-09-30",
+   "table": "AADNonInteractiveUserSignInLogs",
+   "billable_gb": 12.24,
+   "total_gb": 12.24
+  },
+  {
+   "date": "2026-09-30",
+   "table": "DeviceNetworkEvents",
+   "billable_gb": 9.0,
+   "total_gb": 9.0
+  },
+  {
+   "date": "2026-09-30",
+   "table": "DeviceProcessEvents",
+   "billable_gb": 8.0,
+   "total_gb": 8.0
+  },
+  {
+   "date": "2026-09-30",
+   "table": "AzureDiagnostics",
+   "billable_gb": 12.24,
+   "total_gb": 12.24
+  },
+  {
+   "date": "2026-09-30",
+   "table": "SigninLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-30",
+   "table": "StorageBlobLogs",
+   "billable_gb": 3.03,
+   "total_gb": 3.03
+  },
+  {
+   "date": "2026-09-30",
+   "table": "AuditLogs",
+   "billable_gb": 1.0,
+   "total_gb": 1.0
+  },
+  {
+   "date": "2026-09-30",
+   "table": "ThreatIntelIndicators",
+   "billable_gb": 0.306,
+   "total_gb": 0.306
+  },
+  {
+   "date": "2026-09-30",
+   "table": "OfficeActivity",
+   "billable_gb": 0.0,
+   "total_gb": 5.0
+  },
+  {
+   "date": "2026-09-30",
+   "table": "AzureActivity",
+   "billable_gb": 0.0,
+   "total_gb": 1.98
+  },
+  {
+   "date": "2026-09-30",
+   "table": "SecurityAlert",
+   "billable_gb": 0.0,
+   "total_gb": 0.198
+  }
+ ],
+ "tables": [
+  {
+   "name": "SecurityEvent",
+   "plan": "Analytics",
+   "retention_days": 180,
+   "total_retention_days": 365
+  },
+  {
+   "name": "CommonSecurityLog",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "Syslog",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "AADNonInteractiveUserSignInLogs",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "DeviceNetworkEvents",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "DeviceProcessEvents",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "AzureDiagnostics",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "SigninLogs",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "StorageBlobLogs",
+   "plan": "Analytics",
+   "retention_days": 180,
+   "total_retention_days": 180
+  },
+  {
+   "name": "AuditLogs",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "ThreatIntelIndicators",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "OfficeActivity",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "AzureActivity",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  },
+  {
+   "name": "SecurityAlert",
+   "plan": "Analytics",
+   "retention_days": 90,
+   "total_retention_days": 90
+  }
+ ],
+ "rules": [
+  {
+   "name": "Password spray against Entra ID",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "SigninLogs | where ResultType == '50126' | summarize dcount(UserPrincipalName) by IPAddress"
+  },
+  {
+   "name": "MFA fatigue",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "SigninLogs | where ResultType == '500121' | summarize count() by UserPrincipalName"
+  },
+  {
+   "name": "Privileged role assigned",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "AuditLogs | where Category == 'RoleManagement'"
+  },
+  {
+   "name": "Member added to Domain Admins",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "SecurityEvent | where EventID in (4728, 4732, 4756)"
+  },
+  {
+   "name": "Kerberoasting",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "SecurityEvent | where EventID == 4769"
+  },
+  {
+   "name": "LSASS memory dump",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "DeviceProcessEvents | where ProcessCommandLine has 'lsass'"
+  },
+  {
+   "name": "Firewall: connection to TI-listed IP",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "ThreatIntelIndicators | join (CommonSecurityLog | where DeviceAction == 'allow') on $left.ObservableValue == $right.DestinationIP"
+  },
+  {
+   "name": "Linux: sudo to root by new user",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "Syslog | where Facility == 'authpriv' and SyslogMessage has 'sudo'"
+  },
+  {
+   "name": "Inbox forwarding rule",
+   "kind": "Scheduled",
+   "enabled": true,
+   "query": "OfficeActivity | where Operation == 'New-InboxRule'"
+  },
+  {
+   "name": "Beaconing to rare destination (disabled, too noisy)",
+   "kind": "Scheduled",
+   "enabled": false,
+   "query": "DeviceNetworkEvents | summarize count() by RemoteIP"
+  },
+  {
+   "name": "Advanced multistage attack detection",
+   "kind": "Fusion",
+   "enabled": true,
+   "query": ""
+  }
+ ],
+ "prices": {
+  "currency": "USD",
+  "region": "eastus",
+  "payg_per_gb": 4.3,
+  "basic_per_gb": 1.0,
+  "commitment_tiers": {
+   "50": 161.25,
+   "100": 296.0,
+   "200": 548.0,
+   "300": 800.0,
+   "400": 1037.33,
+   "500": 1265.0,
+   "1000": 2480.0,
+   "2000": 4800.0,
+   "5000": 11550.0
+  },
+  "source": "Azure Retail Prices API, list prices on 2026-10-02"
+ },
+ "errors": {}
+}

@@ -1,0 +1,9 @@
+# Example prices for the demo only. Use your own agreement's prices: per user, per month.
+currency = "USD"
+
+[prices]
+SPE_E5 = 57.00
+SPE_E3 = 36.00
+AAD_PREMIUM_P2 = 9.00
+WIN_DEF_ATP = 5.20
+THREAT_INTELLIGENCE = 5.00
